@@ -26,6 +26,7 @@ SetEnv fvwm_runner "rofi -show drun -theme pad"
 SetEnv cache $[HOME]/.fvwm/cache/
 SetEnv scripts $[HOME]/.fvwm/scripts
 SetEnv icons $[HOME]/.fvwm/pixmaps
+SetEnv fvwmscript $[HOME]/.fvwm/fvwmscript
 
 #====================================
 #---- General Settings
@@ -667,7 +668,7 @@ AddToMenu System
 + "&reconfigure" Refresh
 + "&Wallpaper" Popup BGMenu
 + "&Restart" Restart
-+ "&Exit" Module FvwmScript FvwmScript-ConfirmQuit
++ "&Exit" Module FvwmScript fvwmscript/FvwmScript-ConfirmQuit
 
 # power menu
 DestroyMenu pow
@@ -1181,7 +1182,7 @@ ImagePath $HOME/.fvwm/pixmaps
 *FvwmButtons: Padding 0 0
 #*FvwmButtons(2x4, Icon banner.xpm, Action Close)
 *FvwmButtons(20x15+0+0, Frame 0, Icon keka.png, Action )
-*FvwmButtons: (20x1+0+18, Swallow(NoFvwmModule) info 'Module FvwmScript FvwmScript-info' )
+*FvwmButtons: (20x1+0+18, Swallow(NoFvwmModule) info 'Module FvwmScript fvwmscript/FvwmScript-info' )
 #*FvwmButtons(2x2, Frame 0, Title(Center) "FVWM", ActiveColorset 3, Action )
 #*FvwmButtons(1x1, Icon my_restart.xpm, Action Restart)
 #*FvwmButtons(1x1, Icon my_iconify.xpm, Action iconify)
@@ -1202,10 +1203,10 @@ ImagePath $HOME/.fvwm/pixmaps
 *myButtons: Rows 26
 *myButtons: Padding 0 0
 
-*myButtons: (29x3+0+2, Swallow(Close) DateTime 'Module FvwmScript FvwmScript-DateTime'  )
-*myButtons: (29x2+0+7, Swallow(Close) widget20 'Module FvwmScript widget20'  )
+*myButtons: (29x3+0+2, Swallow(Close) DateTime 'Module FvwmScript fvwmscript/FvwmScript-DateTime'  )
+*myButtons: (29x2+0+7, Swallow(Close) widget20 'Module FvwmScript fvwmscript/widget20'  )
 *myButtons: (21x7+4+10, Padding 4, Swallow(Respawn, Close, kill) feh 'Exec mybutton &' )
-*myButtons: (29x1+0+18, Swallow(Close) track 'Module FvwmScript FvwmScript-track'  )
+*myButtons: (29x1+0+18, Swallow(Close) track 'Module FvwmScript fvwmscript/FvwmScript-track'  )
 
 
 *myButtons: (3x3+13+22, Icon arrow-up-icon.png, Panel(delay 0, smooth, steps 0, position center, position Button, position 3+15) Todo   \
@@ -1242,11 +1243,11 @@ ImagePath $HOME/.fvwm/pixmaps
 *punpun: Rows 768
 *punpun: Padding 0 0
 
-*punpun: (280x86+0+60, Swallow(Close) DateTime 'Module FvwmScript FvwmScript-DateTime', NoSize  )
-*punpun: (280x59+0+205, Swallow(Close) widget20 'Module FvwmScript widget20', NoSize  )
-*punpun: (280x40+0+530, Swallow(Close) info 'Module FvwmScript FvwmScript-info'  )
+*punpun: (280x86+0+60, Swallow(Close) DateTime 'Module FvwmScript fvwmscript/FvwmScript-DateTime', NoSize  )
+*punpun: (280x59+0+205, Swallow(Close) widget20 'Module FvwmScript fvwmscript/widget20', NoSize  )
+*punpun: (280x40+0+530, Swallow(Close) info 'Module FvwmScript fvwmscript/FvwmScript-info'  )
 *punpun: (30x80+125+630, Swallow(Kill) "FvwmPager" "FvwmPager mpager 2 0", NoSize)
-*punpun: (280x206+0+280, Swallow(Close) notification 'Module FvwmScript notification' )
+*punpun: (280x206+0+280, Swallow(Close) notification 'Module FvwmScript fvwmscript/notification' )
 
 
 
@@ -1264,14 +1265,14 @@ ImagePath $HOME/.fvwm/pixmaps
 *punpuno: Rows 768
 *punpuno: Padding 0 0
 
-*punpuno: (280x80+0+70, Swallow(Close) DateTime 'Module FvwmScript FvwmScript-DateTime'  )
-*punpuno: (280x30+0+200, Swallow(Close) week 'Module FvwmScript week'  )
+*punpuno: (280x80+0+70, Swallow(Close) DateTime 'Module FvwmScript fvwmscript/FvwmScript-DateTime'  )
+*punpuno: (280x30+0+200, Swallow(Close) week 'Module FvwmScript fvwmscript/week'  )
 *punpuno: (280x40+0+265, Swallow(Close) widget20 'Module FvwmScript widget20'  )
 *punpuno: (130x130+75+355, Padding 0, Swallow(Respawn) feh 'Exec punpuno &',  )
 *punpuno:  (30x30+220+410, Icon next.png, ActiveIcon nexta.png, Action Exec mpc next && killall feh)
 *punpuno:  (30x30+30+410, Icon prev.png, ActiveIcon preva.png, Action Exec mpc prev && killall feh)
-*punpuno:  (100x20+90+550, Swallow(Close) track 'Module FvwmScript FvwmScript-track'  )
-*punpuno:  (30x30+125+500, Swallow(Close) tets3 'Module FvwmScript tets3')
+*punpuno:  (100x20+90+550, Swallow(Close) track 'Module FvwmScript fvwmscript/FvwmScript-track'  )
+*punpuno:  (30x30+125+500, Swallow(Close) tets3 'Module FvwmScript fvwmscript/tets3')
 *punpuno:  (3x3+13+22, Icon arrow-up-icon.png, Panel(delay 0, smooth, steps 0, position center, position Button, position 6+33) punpunyo   \
   "Module FvwmButtons punpunyo")
 
@@ -1285,7 +1286,7 @@ DestroyModuleConfig punpunyo: *
 *punpunyo: Columns 280
 *punpunyo: Rows 392
 *punpunyo(280x162+0+0, Padding 0, Icon circularp2.png, Action )
-*punpunyo(280x20+0+245, Padding 0, Swallow(Close) info2 'Module FvwmScript FvwmScript-info2'  )
+*punpunyo(280x20+0+245, Padding 0, Swallow(Close) info2 'Module FvwmScript fvwmscript/FvwmScript-info2'  )
 *punpunyo(30x40+81+326, Icon prev.png, ActiveIcon preva.png, Action(Mouse1) Exec mpc prev && killall feh)
 *punpunyo(30x40+121+326, Center, Icon play.png, ActiveIcon playa.png, Action(Mouse1) Exec mpc toggle && killall feh)
 *punpunyo(30x40+160+326, Icon next.png, ActiveIcon nexta.png, Action(Mouse1) Exec mpc next && killall feh)
@@ -1309,7 +1310,7 @@ ImagePath $HOME/.fvwm/pixmaps
 *album: Rows 22
 *album: Padding 0 0
 *album: (20x15+0+0, Swallow(Respawn, Close) feh 'Exec album')
-*album: (20x1+0+18, Swallow Musica 'Module FvwmScript FvwmScript-Musica' )
+*album: (20x1+0+18, Swallow Musica 'Module FvwmScript fvwmscript/FvwmScript-Musica' )
 
 
 ### My dock
@@ -1350,7 +1351,7 @@ DestroyModuleConfig foo: *
 *foo: Columns 259
 *foo: Rows 325
 *foo(259x259+0+0, Padding 0, Swallow(Respawn,Close) feh 'Exec myfoo &'  )
-*foo(258x40+0+265, Swallow(Kill,Respawn) tracjk 'Module FvwmScript FvwmScript-tracjk' )
+*foo(258x40+0+265, Swallow(Kill,Respawn) tracjk 'Module FvwmScript fvwmscript/FvwmScript-tracjk' )
 
 Style "foo" !Title, !Borders, WindowListSkip, !Sticky, !ParentalRelativity
 
@@ -1365,7 +1366,7 @@ DestroyModuleConfig faa: *
 *faa: Colorset 28
 *faa: Columns 357
 *faa: Rows 234
-*faa(357x234+0+0, Swallow(Kill,Respawn) Memento 'Module FvwmScript Memento', Action(Mouse1) Next (faa) Iconify   )
+*faa(357x234+0+0, Swallow(Kill,Respawn) Memento 'Module FvwmScript fvwmscript/Memento', Action(Mouse1) Next (faa) Iconify   )
 
 Style "faa" !Title, !Borders, WindowListSkip, Sticky, !ParentalRelativity, StartIconic
 
@@ -1405,14 +1406,14 @@ ImagePath $HOME/.fvwm/pixmaps
 *full: Rows 768
 *full: Padding 0 0
 
-*full: (298x298+534+187, Swallow(Close) widget111 'Module FvwmScript widget111' )
-*full: (298x112+534+490, Swallow(Close) widget4 'Module FvwmScript widget4' )
-*full: (298x112+231+187, Swallow(Close) widget2 'Module FvwmScript widget2' )
-*full: (306x415+837+187, Swallow(Close) Kalende7 'Module FvwmScript Kalende7' )
-*full: (160x161+371+302, Swallow(Close) widget7 'Module FvwmScript widget7' )
-*full: (140x140+380+464, Swallow(Close) widget8 'Module FvwmScript widget8' )
-*full: (131x298+232+303, Swallow(Close) widget19 'Module FvwmScript widget19' )
-*full: (210x10+587+678, Swallow(Close) tets3 'Module FvwmScript tets3' )
+*full: (298x298+534+187, Swallow(Close) widget111 'Module FvwmScript fvwmscript/widget111' )
+*full: (298x112+534+490, Swallow(Close) widget4 'Module FvwmScript fvwmscript/widget4' )
+*full: (298x112+231+187, Swallow(Close) widget2 'Module FvwmScript fvwmscript/widget2' )
+*full: (306x415+837+187, Swallow(Close) Kalende7 'Module FvwmScript fvwmscript/Kalende7' )
+*full: (160x161+371+302, Swallow(Close) widget7 'Module FvwmScript fvwmscript/widget7' )
+*full: (140x140+380+464, Swallow(Close) widget8 'Module FvwmScript fvwmscript/widget8' )
+*full: (131x298+232+303, Swallow(Close) widget19 'Module FvwmScript fvwmscript/widget19' )
+*full: (210x10+587+678, Swallow(Close) tets3 'Module FvwmScript fvwmscript/tets3' )
 
 
 # CursorStyle
