@@ -1,5 +1,5 @@
 # Dots
 just stuff.
 
-**fvwm** - in the hills 
+**fvwm** - In The Hills 
 ![Screenshot](screenshot/screenshot.png)
