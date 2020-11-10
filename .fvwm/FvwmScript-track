@@ -4,8 +4,8 @@ Font "xft:Noto Sans cjk kr:style=Bold:size=14"
 
 Init
  Begin
-  Set $Track = (GetOutput {exec mpctrack} 1 -1)
-  Set $Artist = (GetOutput {exec mpcartist} 1 -1)
+  Set $Track = (GetOutput {exec mpc -f '%title%' | head -1} 1 -1)
+  Set $Artist = (GetOutput {exec mpc -f '%albumartist%' | head -1} 1 -1)
 
 
   ChangeTitle 1 $Track

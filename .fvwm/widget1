@@ -40,7 +40,7 @@ Init
     Begin
     Set $Desk = $nrTasks
     ChangeTitle 3 $nrTasks
-    ChangeIcon 2 $notif
+    ChangeIcon 2 $notif2
     ChangeColorset 3 12
     End
   End

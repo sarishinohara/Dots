@@ -6,13 +6,14 @@ Colorset  8
 
 Init
  Begin
-  Set $Time = (GetOutput {exec mpcartist} 1 -1)
-  Set $Date = (GetOutput {exec mpctrack} 1 -1)
-  Set $Date1 = (GetOutput {exec mpcalbum} 1 -1)
+  Set $artist = (GetOutput {exec mpc -f '%albumartist%' | head -1} 1 -1)
+  Set $track = (GetOutput {exec mpc -f '%title%' | head -1} 1 -1)
+  Set $album = (GetOutput {exec mpc -f '%album%' | head -1} 1 -1)
 
-  ChangeTitle 1 $Time
-  ChangeTitle 2 $Date
-  ChangeTitle 3 $Date1
+  ChangeTitle 1 $artist
+  ChangeTitle 2 $track
+  ChangeTitle 3 $album
+  ShowWidget 4
 
 End
 
@@ -20,13 +21,14 @@ PeriodicTasks
  Begin 
   If (RemainderOfDiv (GetTime) 10)==0 Then
   Begin
-   Set $Time = (GetOutput {exec mpcartist} 1 -1)
-   Set $Date = (GetOutput {exec mpctrack} 1 -1)
-   Set $Date1 = (GetOutput {exec mpcalbum} 1 -1)
+   Set $artist = (GetOutput {exec mpcartist} 1 -1)
+   Set $track = (GetOutput {exec mpctrack} 1 -1)
+   Set $album = (GetOutput {exec mpcalbum} 1 -1)
 
-   ChangeTitle 1 $Time
-   ChangeTitle 2 $Date
-   ChangeTitle 3 $Date1
+   ChangeTitle 1 $artist
+   ChangeTitle 2 $track
+   ChangeTitle 3 $album
+   ShowWidget 4
 
   End
 End
@@ -44,7 +46,7 @@ Main
  Case message of
   SingleClic :
   Begin
-  Do {Exec killall feh}              
+  Do {Exec killall feh && album}              
   End
 End
 
@@ -79,5 +81,20 @@ Main
   SingleClic :
   Begin
   ChangeForeColor 3 {#5394c9}
+  End
+End
+
+Widget 4
+Property
+ Size   192 30
+ Position 44 -24
+ Type   SwallowExec
+ Title    {tets6}
+ SwallowExec  {Module FvwmScript tets6}
+ Colorset 8
+ Main
+ Case message of
+  SingleClic :
+  Begin
   End
 End
