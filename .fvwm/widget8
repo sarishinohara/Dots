@@ -1,0 +1,87 @@
+WindowTitle {widget8}
+WindowSize  140 140
+WindowPosition -274 -85
+Colorset 666
+Font "xft:Bebas Neue:style=Bold:size=25" 
+
+Init
+ Begin
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Time = (GetOutput {exec date "+%H"} 1 -1)
+  Set $Time2 = (GetOutput {exec date "+%M"} 1 -1)
+  Set $Icon = $homeDir {pixmaps/bubbles/date.png}
+
+
+  ChangeIcon 1 $Icon
+  ChangeTitle 2 $Time
+  ChangeTitle 3 $Time2
+
+End
+
+PeriodicTasks
+ Begin 
+  If (RemainderOfDiv (GetTime) 60)==0 Then
+  Begin
+   Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+   Set $Time = (GetOutput {exec date "+%H"} 1 -1)
+   Set $Time2 = (GetOutput {exec date "+%M"} 1 -1)
+   Set $Icon = $homeDir {pixmaps/bubbles/date.png}
+
+  
+   ChangeIcon 1 $Icon
+   ChangeTitle 2 $Time
+   ChangeTitle 3 $Time2
+
+  End
+End
+
+
+Widget 1
+Property
+ Position 0 0
+ Size 140 140
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 1 {#8ac9f4} 
+  End
+End
+
+Widget 2
+Property
+ Position 38 17
+ Size 60 60
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 2 {#8ac9f4} 
+  End
+End
+
+Widget 3
+Property
+ Position 38 67
+ Size 60 60
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 3 {#8ac9f4} 
+  End
+End

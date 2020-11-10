@@ -1,0 +1,55 @@
+#!/bin/bash
+
+pkill lemonbar
+
+bg="%{B#343d46}%{F#bfbec3}"
+active="%{B#343d46}%{F#ffffff}"
+geo="1366x35+0+0"
+f1="Roboto:size=9"
+f2="Noto Sans CJK KR:size=9"
+f3="Weather Icons:size=9" 
+
+
+swsa="$bg%{B-}%{F-}"
+swsn="$bg%{B-}%{F-}"
+
+get_ws(){
+    desk=$(xdotool get_desktop)
+    wsname=("    דחא    " "     םייתש    " "    שולש     ")
+    for i in {0..3}; do
+        echo -n "$bg%{A:xdotool set_desktop $i:}"
+        if [[ "$((desk))" == "$i" ]]; then
+            echo -n "$swsa$active"
+        else
+            echo -n ""
+        fi
+        if [[ "$((desk))" == "$i" ]]; then
+            echo -n "${wsname[$((i))]}$swsn" | tr '[:lower:]' '[:lower:]'
+        else
+            echo -n "${wsname[$((i))]}" | tr '[:lower:]' '[:lower:]'
+        fi
+        echo -n "%{A}%{B-}%{F-}"
+done
+}
+
+get_window(){	
+	id=$(xtitle -t 50)
+	echo "%{B#37bf8d}%{F#ffffff}      $id      %{B-}%{F-}"
+}
+
+get_weather() {
+        echo "%{B#ffffff}%{F#000000}    $(forecast)    %{B-}%{F-}"
+}
+
+get_song(){
+    echo "%{B#ffffff}%{F#000000}%{A:mpc toggle:}%{A2:mpc prev:}%{A3:mpc next:}%{A4:volup:}%{A5:voldown:}     $(progressbarw)     %{A}%{A}%{A}%{A}%{A}%{B-}%{F-}"
+}
+
+get_time() {
+        echo "%{B#ffffff}%{F#000000}%{A:pkill lemonbar && hikarii:}%{A3:pkill lemonbar && yami:}%{A2:pkill lemonbar && hikaro:}     $(date "+%j jours autours du soleil")     %{A}%{A}%{A}%{B-}%{F-}"
+}
+
+while true; do
+    echo "%{B#ffffff}%{5}%{O0}$(get_weather) %{r} $(get_time)%{O0}"
+    sleep 0.1
+done | lemonbar -g "${geo}" -f "${f1}" -f "${f2}" -f "${f3}" -B "#ffffff" -F "#000000" -o -1 -a 25 | sh & > /dev/null

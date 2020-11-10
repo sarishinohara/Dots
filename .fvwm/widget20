@@ -1,0 +1,307 @@
+WindowTitle {widget20}
+WindowSize  280 85
+WindowPosition 0 0
+#Colorset 666
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $wewe = (GetOutput {exec wewe2} 1 -1)
+  Set $wiwi2 = (GetOutput {exec wiwi2} 1 -1)
+  Set $wewe3 = (GetOutput {exec wewe1} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon1 = $homeDir {pixmaps/weather/UNKNOWN.png}
+  Set $Icon2 = $homeDir {pixmaps/plant2.png}
+  Set $Icon3 = $homeDir {pixmaps/weather/CLEAR1.png}
+  Set $Icon4 = $homeDir {pixmaps/weather/CLEAR0.png} 
+  Set $Icon5 = $homeDir {pixmaps/weather/PCLOUDY1.png} 
+  Set $Icon6 = $homeDir {pixmaps/weather/PCLOUDY0.png} 
+  Set $Icon7 = $homeDir {pixmaps/weather/MCLOUDY.png} 
+  Set $Icon8 = $homeDir {pixmaps/weather/MCLOUDY0.png} 
+  Set $Icon9 = $homeDir {pixmaps/weather/RAIN.png} 
+  Set $Icon10 = $homeDir {pixmaps/weather/SHOWER0.png} 
+  Set $Icon11 = $homeDir {pixmaps/weather/SHOWER1.png} 
+  Set $Icon12 = $homeDir {pixmaps/weather/TSHOWER0.png} 
+  Set $Icon13 = $homeDir {pixmaps/weather/TSHOWER1.png} 
+  Set $Icon14 = $homeDir {pixmaps/weather/SNOW0.png} 
+  Set $Icon15 = $homeDir {pixmaps/weather/SNOW1.png} 
+  Set $Icon16 = $homeDir {pixmaps/weather/HAIL0.png} 
+  Set $Icon17 = $homeDir {pixmaps/weather/HAIL1.png} 
+  Set $Icon18 = $homeDir {pixmaps/weather/MCLOUDY2.png} 
+  ChangeTitle 2 $wewe
+  ChangeTitle 3 $wewe3
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon3
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon4
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon5
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon6
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon7
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon18
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon9
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon9
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon11
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon10
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon13
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon12
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon15
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon14
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon17
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon16
+  End
+  End
+
+End
+
+PeriodicTasks
+Begin
+  If (RemainderOfDiv (GetTime) 1800)==0 Then
+ Begin
+  Set $wiwi2 = (GetOutput {exec wiwi2} 1 -1)
+  Set $wewe = (GetOutput {exec wewe2} 1 -1)
+  Set $wewe3 = (GetOutput {exec wewe1} 1 -1)
+  ChangeTitle 2 $wewe
+  ChangeTitle 3 $wewe3
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon3
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon4
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon5
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon6
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon7
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon18
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon9
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon9
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon11
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon10
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon13
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon12
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon15
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon14
+  End
+  End
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon17
+  End
+  Else 
+  Begin
+  Set $weather = (GetOutput {echo } 1 -1)
+  If $wiwi2 == $weather Then
+  Begin
+    ChangeIcon 1 $Icon16
+  End
+  End
+ End
+End
+  
+
+Widget 1
+Property
+ Position 0 -3
+ Size 280 40
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 1 {#8ac9f4}
+  End
+End
+  
+Widget 2
+Property
+ Position 0 40
+ Size 280 20
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 2 {#8ac9f4}
+  End
+End
+
+Widget 3
+Property
+ Position 0 67
+ Size 280 20
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 3 {#8ac9f4}
+  End
+End
+

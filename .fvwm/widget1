@@ -1,0 +1,166 @@
+WindowTitle {widget1}
+WindowSize  298 298
+WindowPosition -274 -85
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $Desk = (GetOutput {exec wc -l < ~/.fvwm/memento_file} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/llll.png}
+  Set $notif = $homeDir {pixmaps/bubbles/nnn.png}
+  Set $notif2 = $homeDir {pixmaps/bubbles/lll.png}
+  Set $bla = (GetOutput {echo @ } 1 -1)
+  Set $Host = $bla (GetOutput {exec hostname } 1 -1)
+  Set $User = (GetOutput {exec whoami} 1 -1)
+
+
+  Set $tasksFile = $homeDir {memento_file}
+
+  Set $num = {wc -l < ~/.fvwm/memento_file} 
+
+
+  ChangeIcon 1 $Icon
+  ChangeTitle 4 $User
+  ChangeTitle 5 $Host
+  Set $getNrTasks = {cat "} $tasksFile {" | wc -l}
+  Set $nrTasks = (GetOutput $getNrTasks 1 -1)
+  Set $getTasks = {cat "} $tasksFile {"}
+  If $nrTasks > 0 Then
+  Begin
+    Set $Desk = $nrTasks
+    ChangeTitle 3 $nrTasks
+    ChangeIcon 2 $notif
+    ChangeColorset 3 11
+   
+  End
+  Else
+  Begin
+    If $nrTasks == 0 Then
+    Begin
+    Set $Desk = $nrTasks
+    ChangeTitle 3 $nrTasks
+    ChangeIcon 2 $notif
+    ChangeColorset 3 12
+    End
+  End
+
+
+End
+
+PeriodicTasks
+## First Page
+Begin
+ If (RemainderOfDiv (GetTime) 10)==0 Then
+ Begin
+  Set $getNrTasks = {cat "} $tasksFile {" | wc -l}
+  Set $nrTasks = (GetOutput $getNrTasks 1 -1)
+  Set $getTasks = {cat "} $tasksFile {"}
+  If $nrTasks > 0 Then
+  Begin
+    Set $Desk = $nrTasks
+    ChangeTitle 3 $nrTasks
+    ChangeIcon 2 $notif
+    ChangeColorset 3 11
+   
+  End
+  Else
+  Begin
+    If $nrTasks == 0 Then
+    Begin
+    Set $Desk = $nrTasks
+    ChangeTitle 3 $nrTasks
+    ChangeIcon 2 $notif
+    ChangeColorset 3 12
+    End
+  End
+ End
+End
+  
+  
+
+
+Widget 1
+Property
+ Position 0 20
+ Size 297 170
+ Font "xft:Bebas Neue:style=Bold:size=15"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Next (full) Iconify}              
+  End
+End
+
+Widget 2
+Property
+ Position 73 150
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=12"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Module FvwmButtons faa}              
+  End
+End
+
+
+Widget 3
+Property
+ Position 81 157
+ Size 15 15
+ Font "xft:Bebas Neue:style=Regular:size=12"
+ Type ItemDraw
+ Colorset 11
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Module FvwmButtons faa}              
+  End
+End
+
+Widget 4
+Property
+ Position 0 210
+ Size 298 30
+ Font "xft:Roboto Black:size=25:Regular"
+ Type ItemDraw
+ Colorset 18
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 5
+Property
+ Position 0 240
+ Size 298 30
+ Font "xft:Roboto:size=12:Regular"
+ Type ItemDraw
+ Colorset 19
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+

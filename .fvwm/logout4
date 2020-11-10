@@ -1,0 +1,140 @@
+WindowTitle {logout4}
+WindowSize  1366 768
+Colorset 666
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $Desk = (GetOutput {exec wc -l < ~/.fvwm/memento_file} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/llll.png}
+  Set $notif = $homeDir {pixmaps/bubbles/nnn.png}
+  Set $notif2 = $homeDir {pixmaps/bubbles/lll.png}
+  Set $bla = (GetOutput {echo @ } 1 -1)
+  Set $Host = $bla (GetOutput {exec hostname } 1 -1)
+  Set $User = (GetOutput {exec whoami} 1 -1)
+  Set $Lock = $homeDir {pixmaps/padlock.png}
+  Set $Sleep = $homeDir {pixmaps/sus.png}
+  Set $Reboot = $homeDir {pixmaps/refresh.png}
+  Set $PowerOff = $homeDir {pixmaps/pow.png}
+  Set $log = $homeDir {pixmaps/log.png}
+  Set $echo = (GetOutput {} 1 -1)
+
+  Set $tasksFile = $homeDir {memento_file}
+
+  Set $num = {wc -l < ~/.fvwm/memento_file} 
+
+  ChangeTitle 1 $echo
+  ChangeIcon 2 $Lock
+  ChangeIcon 3 $Sleep
+  ChangeIcon 4 $Reboot
+  ChangeIcon 5 $PowerOff
+  ChangeIcon 6 $log
+
+End
+  
+
+Widget 1
+Property
+ Position 0 0
+ Size 1366 768
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Quit
+  End
+End
+
+
+Widget 2
+Property
+ Position 208 309
+ Size 150 150
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec i3lock}              
+  End
+End
+
+Widget 3
+Property
+ Position 408 309
+ Size 150 150
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec sudo suspend}              
+  End
+End
+
+Widget 4
+Property
+ Position 808 309
+ Size 150 150
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec sudo reboot}              
+  End
+End
+
+Widget 5
+Property
+ Position 1008 309
+ Size 150 150
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec poweroff}              
+  End
+End
+
+Widget 6
+Property
+ Position 608 309
+ Size 150 150
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Do {Quit}
+  End
+End
+
+

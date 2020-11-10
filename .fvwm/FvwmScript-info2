@@ -1,0 +1,78 @@
+WindowTitle {info2}
+WindowSize  280 90
+Font "xft:Bebas Neue:style=Bold:size=10" 
+
+Init
+ Begin
+  Set $Time = (GetOutput {exec hostname} 1 -1)
+  Set $Date = (GetOutput {exec lsb_release -is} 1 -1)
+  Set $Date1 = (GetOutput {exec wmm} 1 -1)
+
+  ChangeTitle 1 $Time
+  ChangeTitle 2 $Date
+  ChangeTitle 3 $Date1
+
+End
+
+PeriodicTasks
+ Begin 
+  If (RemainderOfDiv (GetTime) 20)==0 Then
+  Begin
+   Set $Time = (GetOutput {exec hostname} 1 -1)
+   Set $Date = (GetOutput {exec lsb_release -is} 1 -1)
+   Set $Date1 = (GetOutput {exec wmm} 1 -1)
+
+   ChangeTitle 1 $Time
+   ChangeTitle 2 $Date
+   ChangeTitle 3 $Date1
+
+  End
+End
+
+Widget 1
+Property
+ Position 0 -4
+ Size 280 20
+ Font "xft:Bebas Neue:style=Bold:size=10"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 1 {#8ac9f4} 
+  End
+End
+
+Widget 2
+Property
+ Position 0 33
+ Size 280 20
+ Font "xft:Bebas Neue:style=Regular:size=10"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 2 {#8ac9f4} 
+  End
+End
+
+Widget 3
+Property
+ Position 0 73
+ Size 280 20
+ Font "xft:Bebas Neue:style=Regular:size=10"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 3 {#8ac9f4} 
+  End
+End

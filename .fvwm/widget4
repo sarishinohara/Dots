@@ -1,0 +1,568 @@
+WindowTitle {widget4}
+WindowSize  298 112
+WindowPosition -274 -85
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $Desk0 = (GetOutput {echo M} 1 -1)
+  Set $Desk1 = (GetOutput {echo T} 1 -1)
+  Set $Desk2 = (GetOutput {echo W} 1 -1)
+  Set $Desk3 = (GetOutput {echo T} 1 -1)
+  Set $Desk4 = (GetOutput {echo F} 1 -1)
+  Set $Desk5 = (GetOutput {echo S} 1 -1)
+  Set $Desk6 = (GetOutput {echo S} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $w0 = $homeDir {pixmaps/bubbles/w0.png}
+  Set $aw0 = $homeDir {pixmaps/bubbles/m.png}
+
+
+  ChangeTitle 2 $Desk0
+  ChangeTitle 4 $Desk1
+  ChangeTitle 6 $Desk2
+  ChangeTitle 8 $Desk3
+  ChangeTitle 10 $Desk4
+  ChangeTitle 12 $Desk5
+  ChangeTitle 14 $Desk6
+
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk00 = (GetOutput {echo Mon} 1 -1)
+  If $Deskcurrent == $Desk00 Then
+  Begin
+    Set $DeskMon = (GetOutput {echo M} 1 -1)
+    ChangeTitle 2 $DeskMon
+    ChangeIcon 1 $aw0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 2 11
+    ChangeColorset 4 28 
+    ChangeColorset 6 28   
+    ChangeColorset 8 28   
+    ChangeColorset 10 28
+    ChangeColorset 12 28   
+    ChangeColorset 14 28      
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk11 = (GetOutput {echo Tue} 1 -1)
+  If $Deskcurrent == $Desk11 Then
+  Begin
+    Set $DeskTue = (GetOutput {echo T} 1 -1)
+    ChangeTitle 4 $DeskTue
+    ChangeIcon 3 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 4 11
+    ChangeColorset 2 28 
+    ChangeColorset 6 28
+    ChangeColorset 8 28 
+    ChangeColorset 10 28
+    ChangeColorset 12 28 
+    ChangeColorset 14 28 
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk22 = (GetOutput {echo Wed} 1 -1)
+    If $Deskcurrent == $Desk22 Then
+  Begin
+    Set $DeskWed = (GetOutput {echo W} 1 -1)
+    ChangeTitle 6 $DeskWed
+    ChangeIcon 5 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 6 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 8 28
+    ChangeColorset 10 28
+    ChangeColorset 12 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk33 = (GetOutput {echo Thu} 1 -1)
+    If $Deskcurrent == $Desk33 Then
+  Begin
+    Set $DeskThu = (GetOutput {echo T} 1 -1)
+    ChangeTitle 8 $DeskThu
+    ChangeIcon 7 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 8 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 10 28 
+    ChangeColorset 12 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk44 = (GetOutput {echo Fri} 1 -1)
+    If $Deskcurrent == $Desk44 Then
+  Begin
+    Set $DeskFri = (GetOutput {echo F} 1 -1)
+    ChangeTitle 10 $DeskFri
+    ChangeIcon 9 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 8 28
+    ChangeColorset 10 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 12 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk55 = (GetOutput {echo Sat} 1 -1)
+    If $Deskcurrent == $Desk55 Then
+  Begin
+    Set $DeskSat = (GetOutput {echo S} 1 -1)
+    ChangeTitle 12 $DeskSat
+    ChangeIcon 11 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 8 28
+    ChangeColorset 12 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 10 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk66 = (GetOutput {echo Sun} 1 -1)
+    If $Deskcurrent == $Desk66 Then
+  Begin
+    Set $DeskSun = (GetOutput {echo S} 1 -1)
+    ChangeTitle 14 $DeskSun
+    ChangeIcon 13 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeColorset 8 28
+    ChangeColorset 14 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 12 28
+    ChangeColorset 10 28
+  End
+End
+
+PeriodicTasks
+## First Page
+Begin
+ If (RemainderOfDiv (GetTime) 60)==0 Then
+ Begin
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk00 = (GetOutput {echo Mon} 1 -1)
+  If $Deskcurrent == $Desk00 Then
+  Begin
+    Set $DeskMon = (GetOutput {echo M} 1 -1)
+    ChangeTitle 2 $DeskMon
+    ChangeIcon 1 $aw0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 2 11
+    ChangeColorset 4 28 
+    ChangeColorset 6 28   
+    ChangeColorset 8 28   
+    ChangeColorset 10 28
+    ChangeColorset 12 28   
+    ChangeColorset 14 28      
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk11 = (GetOutput {echo Tue} 1 -1)
+  If $Deskcurrent == $Desk11 Then
+  Begin
+    Set $DeskTue = (GetOutput {echo T} 1 -1)
+    ChangeTitle 4 $DeskTue
+    ChangeIcon 3 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 4 11
+    ChangeColorset 2 28 
+    ChangeColorset 6 28
+    ChangeColorset 8 28 
+    ChangeColorset 10 28
+    ChangeColorset 12 28 
+    ChangeColorset 14 28 
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk22 = (GetOutput {echo Wed} 1 -1)
+    If $Deskcurrent == $Desk22 Then
+  Begin
+    Set $DeskWed = (GetOutput {echo W} 1 -1)
+    ChangeTitle 6 $DeskWed
+    ChangeIcon 5 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 6 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 8 28
+    ChangeColorset 10 28
+    ChangeColorset 12 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk33 = (GetOutput {echo Thu} 1 -1)
+    If $Deskcurrent == $Desk33 Then
+  Begin
+    Set $DeskThu = (GetOutput {echo T} 1 -1)
+    ChangeTitle 8 $DeskThu
+    ChangeIcon 7 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 8 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 10 28 
+    ChangeColorset 12 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk44 = (GetOutput {echo Fri} 1 -1)
+    If $Deskcurrent == $Desk44 Then
+  Begin
+    Set $DeskFri = (GetOutput {echo F} 1 -1)
+    ChangeTitle 10 $DeskFri
+    ChangeIcon 9 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 11 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 8 28
+    ChangeColorset 10 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 12 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk55 = (GetOutput {echo Sat} 1 -1)
+    If $Deskcurrent == $Desk55 Then
+  Begin
+    Set $DeskSat = (GetOutput {echo S} 1 -1)
+    ChangeTitle 12 $DeskSat
+    ChangeIcon 11 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 13 $w0
+    ChangeColorset 8 28
+    ChangeColorset 12 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 10 28
+    ChangeColorset 14 28
+  End
+  Set $Deskcurrent = (GetOutput {exec date "+%a"} 1 -1)
+  Set $Desk66 = (GetOutput {echo Sun} 1 -1)
+    If $Deskcurrent == $Desk66 Then
+  Begin
+    Set $DeskSun = (GetOutput {echo S} 1 -1)
+    ChangeTitle 14 $DeskSun
+    ChangeIcon 13 $aw0
+    ChangeIcon 1 $w0
+    ChangeIcon 3 $w0
+    ChangeIcon 5 $w0
+    ChangeIcon 7 $w0
+    ChangeIcon 9 $w0
+    ChangeIcon 11 $w0
+    ChangeColorset 8 28
+    ChangeColorset 14 11
+    ChangeColorset 2 28 
+    ChangeColorset 4 28
+    ChangeColorset 6 28
+    ChangeColorset 12 28
+    ChangeColorset 10 28
+  End
+ End
+End
+  
+  
+Widget 1
+Property
+ Position 43 41
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 2
+Property
+ Position 50 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 2 {#8ac9f4}
+  End
+End
+
+
+Widget 3
+Property
+ Position 73 41 
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 4
+Property
+ Position 80 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 5
+Property
+ Position 103 41
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 6
+Property
+ Position 110 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 7
+Property
+ Position 133 41
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 8
+Property
+ Position 140 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 9
+Property
+ Position 163 41
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 10
+Property
+ Position 170 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 11
+Property
+ Position 193 41
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 12
+Property
+ Position 200 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 13
+Property
+ Position 223 41
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:Size=9"
+ Type ItemDraw
+ Colorset 777
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 14
+Property
+ Position 230 48
+ Size 15 15
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+

@@ -1,0 +1,246 @@
+WindowTitle {logout2}
+WindowSize  1366 768
+Colorset 666
+Font "xft:Bebas Neue:style=Bold:size=15" 
+
+Init
+ Begin
+  Set $Desk = (GetOutput {exec wc -l < ~/.fvwm/memento_file} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/llll.png}
+  Set $notif = $homeDir {pixmaps/bubbles/nnn.png}
+  Set $notif2 = $homeDir {pixmaps/bubbles/lll.png}
+  Set $bla = (GetOutput {echo @ } 1 -1)
+  Set $Host = $bla (GetOutput {exec hostname } 1 -1)
+  Set $User = (GetOutput {exec whoami} 1 -1)
+  Set $Lock = $homeDir {pixmaps/padlock2.png}
+  Set $Sleep = $homeDir {pixmaps/sus2.png}
+  Set $Reboot = $homeDir {pixmaps/refresh2.png}
+  Set $PowerOff = $homeDir {pixmaps/pow2.png}
+  Set $log = $homeDir {pixmaps/log2.png}
+
+
+
+
+  Set $tasksFile = $homeDir {memento_file}
+
+  Set $num = {wc -l < ~/.fvwm/memento_file} 
+
+
+  ChangeIcon 2 $Icon
+  ChangeIcon 3 $notif
+  ChangeTitle 4 $Desk
+  ChangeTitle 5 $User
+  ChangeTitle 6 $Host
+  ChangeIcon 7 $Lock
+  ChangeIcon 8 $log
+  ChangeIcon 9 $Reboot
+  ChangeIcon 10 $PowerOff
+
+
+
+End
+
+PeriodicTasks
+## First Page
+Begin
+ If (RemainderOfDiv (GetTime) 5)==0 Then
+ Begin
+  Set $getNrTasks = {cat "} $tasksFile {" | wc -l}
+  Set $nrTasks = (GetOutput $getNrTasks 1 -1)
+  Set $getTasks = {cat "} $tasksFile {"}
+  If $nrTasks > 0 Then
+  Begin
+    Set $Desk = $nrTasks
+    ChangeTitle 4 $nrTasks
+    ChangeIcon 3 $notif
+    ChangeColorset 4 11
+   
+  End
+  Else
+  Begin
+    If $nrTasks == 0 Then
+    Begin
+    Set $Desk = $nrTasks
+    ChangeTitle 4 $nrTasks
+    ChangeIcon 3 $notif
+    ChangeColorset 4 12
+    End
+  End
+ End
+End
+  
+
+
+Widget 1
+Property
+ Position 527 121
+ Size 311 487
+ Font "xft:Bebas Neue:style=Bold:size=15"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End  
+  
+
+
+Widget 2
+Property
+ Position 603 164
+ Size 160 160
+ Font "xft:Bebas Neue:style=Bold:size=15"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Quit
+  End
+End
+
+Widget 3
+Property
+ Position 603 295
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=12"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Quit
+  End
+End
+
+
+Widget 4
+Property
+ Position 611 302
+ Size 15 15
+ Font "xft:Bebas Neue:style=Regular:size=12"
+ Type ItemDraw
+ Colorset 11
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+   Quit
+  End
+End
+
+Widget 5
+Property
+ Position 533 348
+ Size 298 30
+ Font "xft:Bebas Neue:size=25:Bold"
+ Type ItemDraw
+ Colorset 47
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 6
+Property
+ Position 533 380
+ Size 298 17
+ Font "xft:Bebas Neue:size=12:Regular"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 7
+Property
+ Position 534 415
+ Size 298 40
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec i3lock}              
+  End
+End
+
+Widget 8
+Property
+ Position 534 460
+ Size 298 40
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Quit}              
+  End
+End
+
+Widget 9
+Property
+ Position 534 505
+ Size 298 40
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec sudo reboot}              
+  End
+End
+
+Widget 10
+Property
+ Position 534 550
+ Size 298 40
+ Font "xft:Roboto Black:style=Bold:size=16"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec exec poweroff}              
+  End
+End
+
+

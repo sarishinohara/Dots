@@ -1,0 +1,442 @@
+
+##########	Memento FVWM Script
+##########	Notes & tasks reminder
+##########	by sebaro
+##########
+##########	rev.2012-08-15
+
+WindowTitle {Memento2}
+WindowSize 320 150
+WindowPosition 954 577
+
+##### Global Style
+Colorset 8
+Font "xft:Roboto:size=10:Regular"
+
+Init
+Begin
+  ##### Widgets Style
+  Set $defaultColorset = {8}
+  Set $warnColorset = {46}
+  Set $emailColorset = {46}
+  Set $titleFont = {xft:Bebas Neue:size=11:bold}
+
+  ##### Settings
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $tasksFile = $homeDir {memento_file}
+
+  ##### Widgets
+  #Set $memoIcon = $homeDir {pixmaps/memento.png}
+  #ChangeIcon 1 $memoIcon
+  # HideWidget 3
+  Set $addIcon = $homeDir {pixmaps/add.png}
+  Set $delIcon = $homeDir {pixmaps/del.png}
+  Set $upButton = $homeDir {pixmaps/up2.png}
+  ChangeIcon 14 $upButton
+  Set $downButton = $homeDir {pixmaps/down2.png}
+  ChangeIcon 15 $downButton
+  HideWidget 14
+  HideWidget 15
+  ##Set $quitButton = $homeDir {pixmaps/quit.png}
+  ## ChangeIcon 16 $quitButton
+  Key Return A 3 1
+  Key Escape A 3 2
+
+  ##### Variables
+  Set $readTasks = {true}
+  Set $onPage = {first}
+End
+
+PeriodicTasks
+Begin
+  ##### Add Or Delete Task
+  If $addordelTasks == {true} Then
+  Begin
+    If (GetTitle (Add (Add $addordelTask (Add $addordelTask -2)) 5)) == {} Then
+    Begin
+      Do {exec echo "EMPTY should add"}
+      Set $enterTask = {true}
+      Set $enterAction = {enter}
+    End
+    Else
+      Set $delTask = {true}
+    Set $addordelTasks = {false}
+  End
+  
+  ##### Enter Task
+  If $enterTask == {true} Then
+  Begin
+    If $enterAction == {enter} Then
+    Begin
+      HideWidget 2
+      ShowWidget 3
+      ChangeColorset 2 $defaultColorset
+      ChangeTitle 3 {}
+    End
+    If $enterAction == {cancel} Then
+    Begin
+      HideWidget 3
+      ShowWidget 2
+    End
+    Set $enterTask = {false}
+  End
+
+  ##### Delete Task
+  If $delTask == {true} Then
+  Begin
+    Set $doDelTask = {sed -i -e "} (Add $addordelTask (Add $startTask -1)) {d" "} $tasksFile {" && echo "succes" || echo "failed"}
+    If (GetOutput $doDelTask 1 -1) == {succes} Then
+    Begin
+      Set $readTasks = {true}
+      Set $onPage = {first}
+    End
+    Else
+    Begin
+      ChangeColorset 2 $warnColorset
+      ChangeTitle 2 {Task deletion failed!}
+    End
+    Set $delTask = {false}
+  End
+
+  ##### Add Task
+  If $addTask == {true} Then
+  Begin
+    Set $getTaskToAdd = {echo "} (GetTitle 3) {" | sed -e "s/^[ ]*//" -e "s/[ ]*$//" -e "s/\\\//g"}
+    Set $taskToAdd = (GetOutput $getTaskToAdd 1 -1)
+    If $taskToAdd == {} Then
+      Set $invalidText = {true}
+    Else
+    Begin
+      Set $findBadChars = {echo "} $taskToAdd {" | grep "[^a-zA-Z0-9 !;:',.?-]"}
+      Set $findAlphaChars = {echo "} $taskToAdd {" | grep "[a-zA-Z]"}
+      If (GetOutput $findBadChars 1 -1) == {} Then
+      Begin
+        If (GetOutput $findAlphaChars 1 -1) <> {} Then
+          Set $invalidText = {false}
+        Else
+          Set $invalidText = {true}
+      End
+      Else
+        Set $invalidText = {true}
+    End
+    If $invalidText == {true} Then
+    Begin
+      HideWidget 3
+      ShowWidget 2
+      ChangeColorset 2 $warnColorset
+      ChangeTitle 2 {Invalid text!}
+    End
+    Else
+    Begin
+      HideWidget 3
+      ShowWidget 2
+      Set $doAddTask = {echo "} $taskToAdd {" >> "} $tasksFile {" && echo "succes" || echo "failed"}
+      If (GetOutput $doAddTask 1 -1) == {succes} Then
+      Begin
+        Set $readTasks = {true}
+        Set $onPage = {first}
+      End
+      Else
+      Begin
+        ChangeColorset 2 $warnColorset
+        ChangeTitle 2 {Task addition failed!}
+      End
+    End
+    Set $addTask = {false}
+  End
+
+  ##### Read Tasks
+  If $readTasks == {true} Then
+  Begin
+    Set $addButtonSet = {false}
+    For $w = 4 To 13 Do
+      HideWidget $w
+
+    ## First Page
+    If $onPage == {first} Then
+    Begin
+      Set $getNrTasks = {cat "} $tasksFile {" | wc -l}
+      Set $nrTasks = (GetOutput $getNrTasks 1 -1)
+      Set $getTasks = {cat "} $tasksFile {"}
+      If $nrTasks == 0 Then
+        Set $tasksTitle = {I have no tasks to do!}
+      If $nrTasks == 1 Then
+        Set $tasksTitle = {I have one task to do!}
+      If $nrTasks > 1 Then
+        Set $tasksTitle = {I have } $nrTasks { tasks to do!}
+      ChangeTitle 2 $tasksTitle
+      ChangeColorset 2 $defaultColorset
+      Set $startTask = 1
+      HideWidget 14
+      HideWidget 15
+      If $nrTasks > 4 Then
+        ShowWidget 15
+    End
+ 
+    ## Next Page
+    If $onPage == {next} Then
+    Begin
+      If $startTask == 1 Then
+        ShowWidget 14
+      Set $startTask = (Add $startTask 5)
+      Set $stopTask = (Add $startTask 4)
+      If $stopTask >= (Add $nrTasks 1) Then
+        HideWidget 15
+    End
+
+    ## Previous Page
+    If $onPage == {prev} Then
+    Begin
+      If $stopTask >= (Add $nrTasks 1) Then
+        ShowWidget 15
+      Set $startTask = (Add $startTask -5)
+      Set $stopTask = (Add $startTask 4)
+      If $startTask == 1 Then
+        HideWidget 14
+    End
+
+    ## Print Page
+    Set $buttonWidget = 4
+    Set $taskWidget = 5
+    For $i = $startTask To (Add $startTask 4) Do
+    Begin
+      If $i <= $nrTasks Then
+      Begin
+        ShowWidget $buttonWidget
+        ChangeIcon $buttonWidget $delIcon
+        ShowWidget $taskWidget
+        ChangeTitle $taskWidget (GetOutput $getTasks $i -1)
+      End
+      Else
+      Begin
+        If $addButtonSet == {false} Then
+        Begin
+          ShowWidget $buttonWidget
+          ChangeIcon $buttonWidget $addIcon
+          ShowWidget $taskWidget
+          ChangeTitle $taskWidget {}
+          Set $addButtonSet = {true}
+        End
+      End
+      Set $buttonWidget = (Add $buttonWidget 2)
+      Set $taskWidget = (Add $taskWidget 2)
+    End
+    Set $readTasks = {false}
+  End
+End
+
+Widget		1
+Property
+  Type		ItemDraw
+  Size		32 32
+  Position		10 5
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic :
+    Begin
+      Set $readTasks = {true}
+    End
+  End
+
+Widget		2
+Property
+  Type		ItemDraw
+  Size		240 20
+  Position		50 10
+  Flags		NoFocus NoReliefString Left
+Main
+  Case message of
+    SingleClic :
+    Begin
+      ShowWidget3
+    End
+  End
+
+Widget		3
+Property
+  Type		TextField
+  Size		240 20
+  Position		50 10
+  Flags		NoReliefString Left
+Main
+  Case message of
+    1 :
+    Begin
+      Set $addTask = {true}
+    End
+    2 :
+    Begin
+      Set $enterAction = {cancel}
+      Set $enterTask = {true}
+    End
+  End
+
+Widget		4
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		20 40
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic :
+    Begin
+      Set $addordelTasks = {true}
+      Set $addordelTask = {1}
+    End
+  End
+
+Widget		5
+Property
+  Type		ItemDraw
+  Size		220 20
+  Position		50 38
+  Flags		NoFocus NoReliefString Left
+Main
+  Case message of
+  End
+
+Widget		6
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		20 60
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic :
+    Begin
+      Set $addordelTasks = {true}
+      Set $addordelTask = {2}
+    End
+  End
+
+Widget		7
+Property
+  Type		ItemDraw
+  Size		220 20
+  Position		50 58
+  Flags		NoFocus NoReliefString Left
+Main
+  Case message of
+  End
+
+Widget		8
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		20 80
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic :
+    Begin
+      Set $addordelTasks = {true}
+      Set $addordelTask = {3}
+    End
+  End
+
+Widget		9
+Property
+  Type		ItemDraw
+  Size		220 20
+  Position		50 78
+  Flags		NoFocus NoReliefString Left
+Main
+  Case message of
+  End
+
+Widget		10
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		20 100
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic :
+    Begin
+      Set $addordelTasks = {true}
+      Set $addordelTask = {4}
+    End
+  End
+
+Widget		11
+Property
+  Type		ItemDraw
+  Size		220 20
+  Position		50 98
+  Flags		NoFocus NoReliefString Left
+Main
+  Case message of
+  End
+
+Widget		12
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		20 120
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic :
+    Begin
+      Set $addordelTasks = {true}
+      Set $addordelTask = {5}
+    End
+  End
+
+Widget		13
+Property
+  Type		ItemDraw
+  Size		220 20
+  Position		50 118
+  Flags		NoFocus NoReliefString Left
+Main
+  Case message of
+  End
+
+Widget		14
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		290 40
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+   SingleClic :
+    Begin
+      Set $onPage = {prev}
+      Set $readTasks = {true}
+    End
+  End
+
+Widget		15
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		290 120
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+   SingleClic :
+    Begin
+      Set $onPage = {next}
+      Set $readTasks = {true}
+    End
+  End
+
+Widget		16
+Property
+  Type		ItemDraw
+  Size		16 16
+  Position		303 1
+  Flags		NoFocus NoReliefString
+Main
+  Case message of
+    SingleClic:
+    Begin
+      Quit
+    End
+  End

@@ -1,0 +1,88 @@
+WindowTitle {FvwmScript-mpd}
+WindowSize 64 64
+WindowPosition 0 0
+
+Init
+Begin
+Set $MainColor=(GetScriptArgument 1)
+If $MainColor <> {} Then
+Begin
+ChangeColorset 0 $MainColor
+ChangeColorset 1 $MainColor
+End
+
+Set $batt = (GetOutput {exec sysctl -n hw.acpi.battery.life} 1 -1)
+Set $ac = (GetOutput {exec sysctl -n hw.acpi.acline} 1 -1)
+
+# three possibilities for battery percentage:
+If $batt < 50 Then
+  Set $icon = {ic_batt_low}
+Else
+Begin
+  If $batt < 75 Then
+    Set $icon = {ic_batt_med}
+  Else
+  Begin
+    Set $icon = {ic_batt_full}
+  End
+End
+
+# we're working on battery level now.
+If $ac == 1 Then
+  Set $icon = $icon {_on.png}
+Else
+Begin
+  Set $icon = $icon {.png}
+End
+
+ChangeIcon 1 $icon
+ChangeTitle 1 $batt
+End
+
+PeriodicTasks
+Begin
+If (RemainderOfDiv (GetTime) 60) == 0 Then
+Begin
+Set $batt = (GetOutput {exec sysctl -n hw.acpi.battery.life} 1 -1)
+Set $ac = (GetOutput {exec sysctl -n hw.acpi.acline} 1 -1)
+
+  # three possibilities for battery percentage:
+  If $batt < 50 Then
+    Set $icon = {ic_batt_low}
+  Else
+  Begin
+    If $batt < 75 Then
+      Set $icon = {ic_batt_med}
+    Else
+    Begin
+      Set $icon = {ic_batt_full}
+    End
+  End
+
+  # we're working on battery level now.
+  If $ac == 1 Then
+    Set $icon = $icon {_on.png}
+  Else
+  Begin
+    Set $icon = $icon {.png}
+  End
+
+  # apply the new icon.
+  ChangeIcon 1 $icon
+  ChangeTitle 1 $batt
+End
+End
+
+Widget 1
+Property
+Type ItemDraw
+Size 64 64
+Position 0 0
+Flags NoFocus NoReliefString
+Main
+Case message of
+SingleClic:
+Begin
+Do {exec speedstepmode}
+End
+End

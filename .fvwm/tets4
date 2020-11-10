@@ -1,0 +1,230 @@
+WindowTitle {tets4}
+WindowSize  210 10
+WindowPosition 300 500
+Colorset 666
+
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $test = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk0 = (GetOutput {echo } 1 -1)
+  Set $Desk1 = (GetOutput {echo } 1 -1)
+  Set $Desk2 = (GetOutput {echo } 1 -1)
+  Set $Desk3 = (GetOutput {echo } 1 -1)
+  Set $Desk4 = (GetOutput {echo } 1 -1)
+  Set $Desk5 = (GetOutput {echo } 1 -1)
+  Set $Desk6 = (GetOutput {echo } 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $w0 = $homeDir {pixmaps/bubbles/w0.png}
+  Set $aw0 = $homeDir {pixmaps/bubbles/m.png}
+
+End
+
+PeriodicTasks
+## First Page
+Begin
+ If (RemainderOfDiv (GetTime) 2)==0 Then
+ Begin
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk00 = (GetOutput {echo 0} 1 -1)
+  If $Deskcurrent == $Desk00 Then
+  Begin
+    ChangeColorset 1 11  
+  End
+  Else
+  Begin
+    ChangeColorset 1 666  
+  End  
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk11 = (GetOutput {echo 1} 1 -1)
+  If $Deskcurrent == $Desk11 Then
+  Begin
+    ChangeColorset 2 11
+  End
+  Else
+  Begin
+    ChangeColorset 2 666  
+  End  
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk22 = (GetOutput {echo 2} 1 -1)
+    If $Deskcurrent == $Desk22 Then
+  Begin
+    ChangeColorset 3 11  
+  End
+  Else
+  Begin
+    ChangeColorset 3 666  
+  End  
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk33 = (GetOutput {echo 3} 1 -1)
+    If $Deskcurrent == $Desk33 Then
+  Begin
+    ChangeColorset 4 11  
+  End
+  Else
+  Begin
+    ChangeColorset 4 666  
+  End  
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk44 = (GetOutput {echo 4} 1 -1)
+    If $Deskcurrent == $Desk44 Then
+  Begin
+    ChangeColorset 5 11  
+  End
+  Else
+  Begin
+    ChangeColorset 5 666  
+  End  
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk55 = (GetOutput {echo 5} 1 -1)
+    If $Deskcurrent == $Desk55 Then
+  Begin
+    ChangeColorset 6 11
+ 
+  End
+  Else
+  Begin
+    ChangeColorset 6 666  
+  End  
+  Set $Deskcurrent = (GetOutput {exec xdotool get_desktop} 1 -1)
+  Set $Desk66 = (GetOutput {echo 6} 1 -1)
+    If $Deskcurrent == $Desk66 Then
+  Begin
+    ChangeColorset 7 11  
+  End
+  Else
+  Begin
+    ChangeColorset 7 666  
+  End  
+ End
+End
+  
+
+Widget 1
+Property
+ Position 0 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+
+Widget 2
+Property
+ Position 30 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+
+Widget 3
+Property
+ Position 60 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+
+Widget 4
+Property
+ Position 90 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+
+
+Widget 5
+Property
+ Position 120 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+
+
+Widget 6
+Property
+ Position 150 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 7
+Property
+ Position 180 0
+ Size 30 10
+ Font "xft:Bebas Neue:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 28
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+

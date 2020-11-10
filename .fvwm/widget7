@@ -1,0 +1,176 @@
+WindowTitle {widget7}
+WindowSize  160 161
+WindowPosition -274 -85
+Colorset 666
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $git = (GetOutput {echo GT } 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/bubbles/111.png}
+  Set $Icon2 = $homeDir {pixmaps/bubbles/222.png}
+  Set $Icon3 = $homeDir {pixmaps/bubbles/333.png}
+  Set $Icon4 = $homeDir {pixmaps/bubbles/444.png}
+  Set $yt = (GetOutput {echo YT} 1 -1)
+  Set $4C = (GetOutput {echo 4C} 1 -1)
+  Set $redd = (GetOutput {echo RD} 1 -1)
+
+
+
+  Set $tasksFile = $homeDir {memento_file}
+
+  Set $num = {wc -l < ~/.fvwm/memento_file} 
+
+
+  ChangeIcon 1 $Icon
+  ChangeIcon 2 $Icon2
+  ChangeIcon 3 $Icon3
+  ChangeIcon 4 $Icon4
+  ChangeTitle 5 $git
+  ChangeTitle 6 $yt
+  ChangeTitle 7 $4C
+  ChangeTitle 8 $redd
+
+
+End
+
+
+Widget 1
+Property
+ Position 80 0
+ Size 80 80
+ Font "xft:Bebas Neue:style=Bold:size=15"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 2
+Property
+ Position 0 0
+ Size 80 80
+ Font "xft:Bebas Neue:style=Bold:size=12"
+ Type ItemDraw
+Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+
+Widget 3
+Property
+ Position 0 80
+ Size 80 80
+ Font "xft:Bebas Neue:style=Regular:size=12"
+ Type ItemDraw
+Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 4
+Property
+ Position 80 80
+ Size 80 80
+ Font "xft:Roboto Black:style=Regular:size=25"
+ Type ItemDraw
+Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End
+
+Widget 5
+Property
+ Position 25 24
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:size=12"
+ Type ItemDraw
+ ForeColor {#ffffff}
+ BackColor {#8ac9f4}
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://github.com/sarishinohara}
+  End
+End
+
+Widget 6
+Property
+ Position 104 103
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:size=12"
+ Type ItemDraw
+ ForeColor {#ffffff}
+ BackColor {#ff91c7}
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://www.youtube.com/}
+  End
+End
+
+Widget 7
+Property
+ Position 25 103
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:size=12"
+ Type ItemDraw
+ ForeColor {#ffffff}
+ BackColor {#009789}
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://www.4chan.org/}
+  End
+End
+
+Widget 8
+Property
+ Position 104 24
+ Size 30 30
+ Font "xft:Roboto Black:style=Bold:size=12"
+ Type ItemDraw
+ ForeColor {#ffffff}
+ BackColor {#ea5f83}
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://www.reddit.com/} 
+  End
+End
+
+
