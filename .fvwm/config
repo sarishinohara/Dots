@@ -461,8 +461,8 @@ Key f W 4 UndecMax
 
 # Restart/Exit
 Key r A S4 Restart
-Key e A S4 Module FvwmScript logout2
-Key e A S1 Module FvwmScript logout4
+Key e A S4 Module FvwmScript fvwmscript/logout2
+Key e A S1 Module FvwmScript fvwmscript/logout4
 Key Right A 4 SnapRight
 Key Up A 4 SnapHalf
 Key Down A 4 SnapQuarter
