@@ -1,5 +1,5 @@
 # Dots
 just stuff. Really messy stuff
 
-**fvwm** - In The Hills 
+**fvwm** - Drops Of Sun
 ![Screenshot](screenshot/screenshot.png)
