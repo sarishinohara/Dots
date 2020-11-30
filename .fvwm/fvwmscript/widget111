@@ -46,7 +46,7 @@ Init
     If $nrTasks == 0 Then
     Begin
     Set $Desk = $nrTasks
-    ChangeTitle 4 $nrTasks
+    HideWidget 4 
     ChangeIcon 2 $Icon4
     ##ChangeIcon 3 $notif2
     HideWidget 3 
@@ -78,7 +78,7 @@ Begin
     If $nrTasks == 0 Then
     Begin
     Set $Desk = $nrTasks
-    ChangeTitle 4 $nrTasks
+    HideWidget 4 
     ChangeIcon 2 $Icon4
     ##ChangeIcon 3 $notif2
     HideWidget 3 
