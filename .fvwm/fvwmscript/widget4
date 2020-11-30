@@ -15,7 +15,10 @@ Init
   Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
   Set $w0 = $homeDir {pixmaps/bubbles/w0.png}
   Set $aw0 = $homeDir {pixmaps/bubbles/m.png}
+  Set $widget4 = $homeDir {pixmaps/bubbles/widget4.png}
 
+
+  ChangeIcon 15 $widget4
 
   ChangeTitle 2 $Desk0
   ChangeTitle 4 $Desk1
@@ -329,6 +332,22 @@ Begin
  End
 End
   
+
+Widget 15
+Property
+ Position 0 0
+ Size 298 112
+ Font "xft:Roboto Black:style=Regular:Size=9"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  End
+End  
   
 Widget 1
 Property

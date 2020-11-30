@@ -1,0 +1,540 @@
+WindowTitle {tray5}
+WindowSize  1366 70
+WindowPosition 0 66
+Colorset 222
+Font "xft:Bebas Neue:style=Bold:size=25" 
+
+Init
+ Begin
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $batt = (GetOutput {exec cat /sys/class/power_supply/BAT1/capacity} 1 -1)
+  Set $Time2 = (GetOutput {exec date "+%M"} 1 -1)
+  Set $Icon = $homeDir {pixmaps/bubbles/nnn.png}
+  Set $testtt = $homeDir {pixmaps/tray/testtt.png}
+  Set $testiii2 = $homeDir {pixmaps/tray/testiii2.png}
+  Set $testiii3 = $homeDir {pixmaps/tray/testiii3.png}
+  Set $heart = $homeDir {pixmaps/tray/heart.png}
+  Set $heart2 = $homeDir {pixmaps/tray/heart2.png}
+  Set $heart3 = $homeDir {pixmaps/tray/heart3.png}
+  Set $heart4 = $homeDir {pixmaps/tray/heart4.png}
+  Set $heart5 = $homeDir {pixmaps/tray/heart5.png}
+  Set $heart6 = $homeDir {pixmaps/tray/heart6.png}
+  Set $heart7 = $homeDir {pixmaps/tray/heart7.png}
+  Set $bat3 = $homeDir {pixmaps/tray/bat3.png}
+  Set $bat2 = $homeDir {pixmaps/tray/bat2.png}
+  Set $bat4 = $homeDir {pixmaps/tray/bat4.png}
+  Set $bat5 = $homeDir {pixmaps/tray/bat5.png}
+  Set $bat6 = $homeDir {pixmaps/tray/bat6.png}
+  Set $bat7 = $homeDir {pixmaps/tray/bat7.png}
+  Set $bat17 = $homeDir {pixmaps/tray/bat17.png}
+  Set $bat18 = $homeDir {pixmaps/tray/bat18.png}
+  Set $bat19 = $homeDir {pixmaps/tray/bat19.png}
+  Set $bat20 = $homeDir {pixmaps/tray/bat20.png}
+  Set $nobat = $homeDir {pixmaps/tray/nobat.png}
+  Set $nobat = $homeDir {pixmaps/tray/nobat.png}
+  Set $nobat2 = $homeDir {pixmaps/tray/nobat2.png}
+  Set $lowbat = $homeDir {pixmaps/tray/lowbat.png}
+  Set $lowbat2 = $homeDir {pixmaps/tray/lowbat2.png}
+  Set $lowbat3 = $homeDir {pixmaps/tray/lowbat3.png}
+  Set $charge = $homeDir {pixmaps/tray/charge.png}
+  Set $halfbat = $homeDir {pixmaps/tray/halfbat.png}
+  Set $fullbat = $homeDir {pixmaps/tray/fullbat.png}
+  Set $savebat = $homeDir {pixmaps/tray/savebat.png}
+  Set $wifi = $homeDir {pixmaps/tray/wifi.png}
+  Set $wifi2 = $homeDir {pixmaps/tray/wifi2.png}
+  Set $wifi3 = $homeDir {pixmaps/tray/wifi3.png}
+  Set $wifi4 = $homeDir {pixmaps/tray/wifi4.png}
+  Set $wifi5 = $homeDir {pixmaps/tray/wifi5.png}
+  Set $wifi6 = $homeDir {pixmaps/tray/wifi6.png}
+  Set $wifi7 = $homeDir {pixmaps/tray/wifi7.png}
+  Set $wifi8 = $homeDir {pixmaps/tray/wifi8.png}
+  Set $wifi9 = $homeDir {pixmaps/tray/wifi9.png}
+  Set $wifi10 = $homeDir {pixmaps/tray/wifi10.png}
+  Set $tempp = (GetOutput {exec tempp} 1 -1)
+  Set $temp = $homeDir {pixmaps/tray/temp.png}
+  Set $temp2 = $homeDir {pixmaps/tray/temp2.png}
+  Set $temp3 = $homeDir {pixmaps/tray/temp3.png}
+  Set $temp4 = $homeDir {pixmaps/tray/temp4.png}
+  Set $trash = $homeDir {pixmaps/tray/trash.png}
+  Set $trash3 = $homeDir {pixmaps/tray/trash3.png}
+  Set $trash5 = $homeDir {pixmaps/tray/trash5.png}
+  Set $trash7 = $homeDir {pixmaps/tray/trash7.png}
+  Set $trash12 = $homeDir {pixmaps/tray/trash12.png}
+  Set $trash13 = $homeDir {pixmaps/tray/trash13.png}
+  Set $airpod = $homeDir {pixmaps/tray/airpod.png}
+  Set $airpod2 = $homeDir {pixmaps/tray/airpod2.png}
+  Set $airpod3 = $homeDir {pixmaps/tray/airpod3.png}
+  Set $airpod4 = $homeDir {pixmaps/tray/airpod4.png}
+  Set $airpod5 = $homeDir {pixmaps/tray/airpod5.png}
+  Set $airpod6 = $homeDir {pixmaps/tray/airpod6.png}
+  Set $airpod7 = $homeDir {pixmaps/tray/airpod7.png}
+  Set $airpod8 = $homeDir {pixmaps/tray/airpod8.png}
+  Set $airpod9 = $homeDir {pixmaps/tray/airpod9.png}
+  Set $airpod10 = $homeDir {pixmaps/tray/airpod10.png}
+  Set $airpod11 = $homeDir {pixmaps/tray/airpod11.png}
+  Set $airpod12 = $homeDir {pixmaps/tray/airpod12.png}
+  Set $airpod13 = $homeDir {pixmaps/tray/airpod13.png}
+  Set $airpod14 = $homeDir {pixmaps/tray/airpod14.png}
+  Set $airpod15 = $homeDir {pixmaps/tray/airpod15.png}
+  Set $airpod16 = $homeDir {pixmaps/tray/airpod16.png}
+  Set $airpod17 = $homeDir {pixmaps/tray/airpod17.png}
+  Set $airpod18 = $homeDir {pixmaps/tray/airpod18.png}
+  Set $airpod19 = $homeDir {pixmaps/tray/airpod19.png}
+  Set $airpod20 = $homeDir {pixmaps/tray/airpod20.png}
+  Set $airpod21 = $homeDir {pixmaps/tray/airpod21.png}
+  Set $airpod22 = $homeDir {pixmaps/tray/airpod22.png}
+  Set $airpod23 = $homeDir {pixmaps/tray/airpod23.png} 
+  Set $airpod24 = $homeDir {pixmaps/tray/airpod24.png}
+
+
+  Set $trashh = (GetOutput {exec find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l} 1 -1)
+  Set $mpctrack = (GetOutput {exec mpctrack} 1 -1)
+  Set $volevel = (GetOutput {exec volevel} 1 -1)
+
+  ShowWidget 12
+
+  Set $bat = (GetOutput {acpi} 1 -1)
+  Set $check = (GetOutput {echo} 1 -1)
+  If $bat == $check Then
+   Begin
+   ChangeIcon 1 $bat4
+   End
+  Else
+   Begin
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 25} 1 -1)
+  If $bat <= $check Then
+   Begin
+   ChangeIcon 1 $bat17
+   End
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 50} 1 -1)
+  If $bat >= $check Then
+   Begin
+   ChangeIcon 1 $bat18
+   End
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 75} 1 -1)
+  If $bat >= $check Then
+   Begin
+   ChangeIcon 1 $bat19
+   End
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 88} 1 -1)
+  If $bat == $check Then
+   Begin
+   ChangeIcon 1 $bat20
+   End
+   End
+  Set $tempp = (GetOutput {exec tempp} 1 -1)
+  Set $check = (GetOutput {echo 48} 1 -1)
+  If $tempp <= $check Then
+   Begin
+   ChangeIcon 3 $temp3
+   ChangeTitle 2 $tempp
+   End
+  Else
+   Begin
+   ChangeIcon 3 $temp2
+   ChangeTitle 2 $tempp
+   End
+   Set $trashh = (GetOutput {exec find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l} 1 -1)
+  Set $check = (GetOutput {echo 1} 1 -1)
+  If $trashh <= $check Then
+   Begin
+   ChangeTitle 7 $trashh
+   ChangeIcon 8  $trash13
+   End
+  Else
+   Begin
+   ChangeTitle 7 $trashh
+   ChangeIcon 8  $trash12
+   End
+   Set $airpodd = (GetOutput {exec airpod} 1 -1)
+   Set $check = (GetOutput {echo connected} 1 -1)
+  If $airpodd == $check Then
+   Begin
+   ShowWidget 10
+   ShowWidget 11
+   ChangeTitle 10  $volevel
+   ChangeIcon 11  $airpod7
+   End
+  Else
+   Begin
+   HideWidget 10
+   HideWidget 11
+   End
+   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d'} 1 -1)
+   Set $prog = (GetOutput {echo 30%} 1 -1)
+  If $progress <= $prog Then
+   Begin
+   ChangeIcon 6 $heart7
+   ChangeIcon 5 $heart6
+   ChangeIcon 4 $heart6
+   End
+   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d'} 1 -1)
+   Set $prog1 = (GetOutput {echo 60%} 1 -1)
+  If $progress == $prog1 Then
+   Begin
+   ChangeIcon 6 $heart7
+   ChangeIcon 5 $heart7
+   ChangeIcon 4 $heart6
+   End
+   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d'} 1 -1)
+   Set $prog2 = (GetOutput {echo 75%} 1 -1)
+  If $progress >= $prog2 Then
+   Begin
+   ChangeIcon 6 $heart7
+   ChangeIcon 5 $heart7
+   ChangeIcon 4 $heart7
+   End
+End
+
+PeriodicTasks
+ Begin
+ If (GetOutput {mpc | grep -o playing} 1 -1) == {playing} Then
+  Begin
+    ##### Check & Change Title
+    Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    If $newTitle == {} Then
+      Set $newTitle = {Title N/A}
+    If $Title <> $newTitle Then
+    Begin
+      Set $Title = $newTitle
+        ChangeTitle 9 $newTitle
+    End
+ Else
+  Begin
+    ##### Check & Change Title
+    Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    If $newTitle == {} Then
+      Set $newTitle = {Title N/A}
+    If $Title <> $newTitle Then
+    Begin
+      Set $Title = $newTitle
+        ChangeTitle 9 $newTitle
+    End
+  End
+ End    
+  If (RemainderOfDiv (GetTime) 60)==0 Then
+  Begin
+  Set $bat = (GetOutput {acpi} 1 -1)
+  Set $check = (GetOutput {echo} 1 -1)
+  If $bat == $check Then
+   Begin
+   ChangeIcon 1 $bat4
+   End
+  Else
+   Begin
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 25} 1 -1)
+  If $bat <= $check Then
+   Begin
+   ChangeIcon 1 $bat17
+   End
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 50} 1 -1)
+  If $bat >= $check Then
+   Begin
+   ChangeIcon 1 $bat18
+   End
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 75} 1 -1)
+  If $bat >= $check Then
+   Begin
+   ChangeIcon 1 $bat19
+   End
+   Set $bat = (GetOutput {battt} 1 -1)
+   Set $check = (GetOutput {echo 88} 1 -1)
+  If $bat == $check Then
+   Begin
+   ChangeIcon 1 $bat20
+   End
+   End
+  Set $tempp = (GetOutput {exec tempp} 1 -1)
+  Set $check = (GetOutput {echo 48} 1 -1)
+  If $tempp <= $check Then
+   Begin
+   ChangeIcon 3 $temp3
+   ChangeTitle 2 $tempp
+   End
+  Else
+   Begin
+   ChangeIcon 3 $temp2
+   ChangeTitle 2 $tempp
+   End
+  Set $trashh = (GetOutput {exec find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l} 1 -1)
+  Set $check = (GetOutput {echo 1} 1 -1)
+  If $trashh <= $check Then
+   Begin
+   ChangeTitle 7 $trashh
+   ChangeIcon 8  $trash13
+   End
+  Else
+   Begin
+   ChangeTitle 7 $trashh
+   ChangeIcon 8  $trash12
+   End
+   Set $airpodd = (GetOutput {exec airpod} 1 -1)
+   Set $check = (GetOutput {echo connected} 1 -1)
+   Set $volevel = (GetOutput {exec volevel} 1 -1)
+  If $airpodd == $check Then
+   Begin
+   ShowWidget 10
+   ShowWidget 11
+   ChangeTitle 10  $volevel
+   ChangeIcon 11  $airpod7
+   End
+  Else
+   Begin
+   HideWidget 10
+   HideWidget 11
+   End
+  End
+  If (RemainderOfDiv (GetTime) 10)==0 Then
+  Begin
+   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d'} 1 -1)
+   Set $prog = (GetOutput {echo 30%} 1 -1)
+  If $progress <= $prog Then
+   Begin
+   ChangeIcon 6 $heart7
+   ChangeIcon 5 $heart6
+   ChangeIcon 4 $heart6
+   End
+   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d'} 1 -1)
+   Set $prog1 = (GetOutput {echo 60%} 1 -1)
+  If $progress == $prog1 Then
+   Begin
+   ChangeIcon 6 $heart7
+   ChangeIcon 5 $heart7
+   ChangeIcon 4 $heart6
+   End
+   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d'} 1 -1)
+   Set $prog2 = (GetOutput {echo 75%} 1 -1)
+  If $progress >= $prog2 Then
+   Begin
+   ChangeIcon 6 $heart7
+   ChangeIcon 5 $heart7
+   ChangeIcon 4 $heart7
+   End
+  End
+End  
+
+
+Widget 1
+Property
+ Position 82 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ShowWidget 12
+  End
+End
+
+Widget 2
+Property
+ Position 122 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ShowWidget 10
+  ShowWidget 11
+  ChangeTitle 10  $volevel
+  ChangeIcon 11  $airpod7
+  End
+End
+
+Widget 3
+Property
+ Position 162 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin       
+  ChangeIcon 3 $temp4 
+  End
+End
+
+Widget 4
+Property
+ Position 1170 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec mpc seek 75%}
+  ChangeIcon 6 $heart7
+  ChangeIcon 5 $heart7
+  ChangeIcon 4 $heart7           
+  End
+End
+
+Widget 5
+Property
+ Position 1210 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec mpc seek 60%}
+  ChangeIcon 6 $heart7
+  ChangeIcon 5 $heart7
+  ChangeIcon 4 $heart6
+  End
+End
+
+Widget 6
+Property
+ Position 1250 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec mpc seek 5%} 
+  ChangeIcon 6 $heart7
+  ChangeIcon 5 $heart6
+  ChangeIcon 4 $heart6  
+  End
+End
+
+Widget 7
+Property
+ Position 192 0
+ Size 40 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeTitle 7 $trashh
+  End
+End
+
+Widget 8
+Property
+ Position 242 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec trash-empty}
+  ChangeIcon 8  $trash13
+  ChangeTitle 7 $trashh
+  End
+End
+
+Widget 9
+Property
+ Position 1086 35
+ Size 280 20
+ Font "xft:Roboto Condensed:style=Regular:size=9"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString 
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  HideWidget 9
+  End
+End
+
+Widget 10
+Property
+ Position 288 -5
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString 
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  HideWidget 10
+  HideWidget 11
+  End
+End
+
+Widget 11
+Property
+ Position 340 0
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString 
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  HideWidget 12
+  End
+End
+
+Widget 12
+Property
+ Size   340 40
+ Position 513 -10
+ Type   SwallowExec
+ Title    {moonphase3}
+ SwallowExec  {Module FvwmScript fvwmscript/moonphase3}
+ Colorset 222
+ Main
+ Case message of
+  SingleClic :
+  Begin
+  HideWidget 12
+  End
+End

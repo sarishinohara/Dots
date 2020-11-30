@@ -1,0 +1,113 @@
+WindowTitle {notification2}
+WindowSize  280 170
+WindowPosition -274 -85
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $updates = (GetOutput {exec pacmann} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/llll.png}
+  Set $notif = $homeDir {pixmaps/bubbles/nnn.png}
+  Set $notif2 = $homeDir {pixmaps/bubbles/lll.png}
+
+  Set $tasksFile = $homeDir {memento_file}
+
+  Set $num = {wc -l < ~/.fvwm/memento_file} 
+
+
+  ChangeIcon 1 $Icon
+  Set $updates = (GetOutput {exec pacmann} 1 -1)
+  If $updates > 0 Then
+  Begin
+    ChangeTitle 3 $updates
+    ChangeIcon 2 $notif
+    ChangeColorset 3 11
+   
+  End
+  Else
+  Begin
+    ChangeTitle 3 $updates
+    ChangeIcon 2 $notif2
+    ChangeColorset 3 12
+  End
+
+End
+
+PeriodicTasks
+## First Page
+Begin
+ If (RemainderOfDiv (GetTime) 1800)==0 Then
+ Begin
+  Set $updates = (GetOutput {exec pacmann} 1 -1)
+  If $updates > 0 Then
+  Begin
+    ChangeTitle 3 $updates
+    ChangeIcon 2 $notif
+    ChangeColorset 3 11
+   
+  End
+  Else
+  Begin
+    ChangeTitle 3 $updates
+    ChangeIcon 2 $notif2
+    ChangeColorset 3 12
+  End
+ End
+End
+  
+  
+
+
+Widget 1
+Property
+ Position 0 0
+ Size 280 170
+ Font "xft:Bebas Neue:style=Bold:size=15"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Next (faa) Iconify}              
+  End
+End
+
+Widget 2
+Property
+ Position 65 135
+ Size 30 30
+ Font "xft:Bebas Neue:style=Bold:size=12"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Module FvwmButtons faa}              
+  End
+End
+
+
+Widget 3
+Property
+ Position 73 142
+ Size 15 15
+ Font "xft:Bebas Neue:style=Regular:size=12"
+ Type ItemDraw
+ Colorset 11
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Module FvwmButtons faa}              
+  End
+End
+
+

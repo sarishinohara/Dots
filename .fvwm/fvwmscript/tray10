@@ -1,0 +1,202 @@
+WindowTitle {tray10}
+WindowSize  1366 70
+WindowPosition 0 657
+Colorset 222
+Font "xft:Bebas Neue:style=Bold:size=25" 
+
+Init
+ Begin
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/bubbles/nnn.png}
+  Set $storage1 = $homeDir {pixmaps/tray/storage2.png}
+  Set $ram1 = $homeDir {pixmaps/tray/ram1.png}
+  Set $cpu1 = $homeDir {pixmaps/tray/cpu1.png}
+  Set $RAMu = (GetOutput {exec RAMu} 1 -1) 
+  Set $diskusage = (GetOutput {exec df --output=pcent /home | tr -dc '0-9' } 1 -1)
+  Set $cpuspeed = (GetOutput {exec cpuspeed } 1 -1)
+  Set $trashh = (GetOutput {exec find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l} 1 -1)
+  Set $mpctrack = (GetOutput {exec mpctrack} 1 -1)
+  Set $volevel = (GetOutput {exec volevel} 1 -1)
+  Set $airpod4 = $homeDir {pixmaps/tray/airpod4.png}
+
+   ChangeIcon 1 $cpu1
+   ChangeTitle 2  $cpuspeed
+
+   ChangeIcon 3 $ram1
+   ChangeTitle 4  $RAMu
+
+   ChangeIcon 6 $storage1
+   ChangeTitle 5  $diskusage
+
+   Set $airpodd = (GetOutput {exec airpod} 1 -1)
+   Set $check = (GetOutput {echo connected} 1 -1)
+  If $airpodd == $check Then
+   Begin
+   ShowWidget 7
+   ChangeIcon 7  $airpod4
+   End
+  Else
+   Begin
+   HideWidget 7
+   End
+
+End
+
+PeriodicTasks
+ Begin 
+
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $RAMu = (GetOutput {exec RAMu} 1 -1) 
+  Set $diskusage = (GetOutput {exec df --output=pcent /home | tr -dc '0-9' } 1 -1)
+  Set $cpuspeed = (GetOutput {exec cpuspeed } 1 -1)
+  Set $trashh = (GetOutput {exec find ~/.local/share/Trash/files/ -maxdepth 1 | wc -l} 1 -1)
+  Set $mpctrack = (GetOutput {exec mpctrack} 1 -1)
+  Set $volevel = (GetOutput {exec volevel} 1 -1)
+
+  If (RemainderOfDiv (GetTime) 10)==0 Then
+  Begin  
+   ChangeTitle 2  $cpuspeed
+
+   ChangeTitle 4  $RAMu
+
+  If (RemainderOfDiv (GetTime) 60)==0 Then
+  Begin
+   ChangeTitle 5  $diskusage 
+
+   Set $airpodd = (GetOutput {exec airpod} 1 -1)
+   Set $check = (GetOutput {echo connected} 1 -1)
+  If $airpodd == $check Then
+   Begin
+   ShowWidget 7
+   ChangeIcon 7  $airpod4
+   End
+  Else
+   Begin
+   HideWidget 7
+   End
+  End 
+ End  
+End  
+
+
+Widget 1
+Property
+ Position 82 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Reconfigure}
+  End
+End
+
+Widget 2
+Property
+ Position 122 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Reconfigure}
+  End
+End
+
+Widget 3
+Property
+ Position 162 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin    
+  Do {Reconfigure}
+  End
+End
+
+Widget 4
+Property
+ Position 202 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Reconfigure}
+  End
+End
+
+Widget 5
+Property
+ Position 1208 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin       
+  End
+End
+
+Widget 6
+Property
+ Position 1248 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ShowWidget 7       
+  ChangeIcon 7 $airpod4 
+  End
+End
+
+Widget 7
+Property
+ Position 668 0
+ Size 40 40
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin       
+  End
+End
+
+
+
+

@@ -6,31 +6,52 @@ Colorset  8
 
 Init
  Begin
-  Set $artist = (GetOutput {exec mpc -f '%albumartist%' | head -1} 1 -1)
-  Set $track = (GetOutput {exec mpc -f '%title%' | head -1} 1 -1)
-  Set $album = (GetOutput {exec mpc -f '%album%' | head -1} 1 -1)
-
-  ChangeTitle 1 $artist
-  ChangeTitle 2 $track
-  ChangeTitle 3 $album
-  ShowWidget 4
+  Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d' | rev | cut -c 2- | rev} 1 -1)
 
 End
 
 PeriodicTasks
- Begin 
-  If (RemainderOfDiv (GetTime) 10)==0 Then
+ Begin
+  If (RemainderOfDiv (GetTime) 1)==0 Then
   Begin
-   Set $artist = (GetOutput {exec mpcartist} 1 -1)
-   Set $track = (GetOutput {exec mpctrack} 1 -1)
-   Set $album = (GetOutput {exec mpcalbum} 1 -1)
-
-   ChangeTitle 1 $artist
-   ChangeTitle 2 $track
-   ChangeTitle 3 $album
-   ShowWidget 4
-
+  Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d' | rev | cut -c 2- | rev} 1 -1)
+  ChangeValue 4 $progress
+  End 
+  If (GetOutput {mpc | grep -o playing} 1 -1) == {playing} Then
+  Begin
+    ##### Check & Change Title
+    Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    If $newTitle == {} Then
+      Set $newTitle = {Title N/A}
+    If $Title <> $newTitle Then
+    Begin
+      Set $Title = $newTitle
+        ChangeTitle 1 $newartist
+        ChangeTitle 2 $newTitle
+        ChangeTitle 3 $newalbum
+    End
+ Else
+  Begin
+    ##### Check & Change Title
+    Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    If $newTitle == {} Then
+      Set $newTitle = {Title N/A}
+    If $Title <> $newTitle Then
+    Begin
+      Set $Title = $newTitle
+        ChangeTitle 1 $newartist
+        ChangeTitle 2 $newTitle
+        ChangeTitle 3 $newalbum
+    End
   End
+ End    
 End
 
 Widget 1
@@ -84,17 +105,15 @@ Main
   End
 End
 
+
 Widget 4
 Property
- Size   192 30
- Position 44 -24
- Type   SwallowExec
- Title    {tets6}
- SwallowExec  {Module FvwmScript tets6}
- Colorset 8
- Main
- Case message of
-  SingleClic :
-  Begin
-  End
+ Size   280 30
+ Position 0 -20
+ Type   HDipstick
+ Title    {HDipstick}
+ #Value    50
+ MinValue 0
+ MaxValue 100
+ Colorset 46
 End

@@ -1,0 +1,1519 @@
+{
+  "checksum": {
+    "previous": "",
+    "current": "9bc7ff5a00477be0a72ccaee87a0ccd9a0120f23e19a537e876b6a95b247e7af"
+  },
+  "fonts": [
+
+  ],
+  "glyphs": {
+    "add-square-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/add-square-button.svg",
+      "codepoint": 61696
+    },
+    "adjust-contrast": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/adjust-contrast.svg",
+      "codepoint": 61697
+    },
+    "align-justify": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/align-justify.svg",
+      "codepoint": 61698
+    },
+    "align-to-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/align-to-left.svg",
+      "codepoint": 61699
+    },
+    "align-to-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/align-to-right.svg",
+      "codepoint": 61700
+    },
+    "ambulance": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/ambulance.svg",
+      "codepoint": 61701
+    },
+    "anchor-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/anchor-shape.svg",
+      "codepoint": 61702
+    },
+    "android-character-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/android-character-symbol.svg",
+      "codepoint": 61703
+    },
+    "angle-arrow-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/angle-arrow-down.svg",
+      "codepoint": 61704
+    },
+    "angle-arrow-pointing-to-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/angle-arrow-pointing-to-right.svg",
+      "codepoint": 61705
+    },
+    "angle-pointing-to-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/angle-pointing-to-left.svg",
+      "codepoint": 61706
+    },
+    "apple-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/apple-logo.svg",
+      "codepoint": 61707
+    },
+    "archive-black-box": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/archive-black-box.svg",
+      "codepoint": 61708
+    },
+    "arrow-angle-pointing-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-angle-pointing-down.svg",
+      "codepoint": 61709
+    },
+    "arrow-down-on-black-circular-background": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-down-on-black-circular-background.svg",
+      "codepoint": 61710
+    },
+    "arrow-pointing-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-pointing-down.svg",
+      "codepoint": 61711
+    },
+    "arrow-pointing-right-in-a-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-pointing-right-in-a-circle.svg",
+      "codepoint": 61712
+    },
+    "arrow-pointing-to-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-pointing-to-left.svg",
+      "codepoint": 61713
+    },
+    "arrow-pointing-to-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-pointing-to-right.svg",
+      "codepoint": 61714
+    },
+    "arrow-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-up.svg",
+      "codepoint": 61715
+    },
+    "arrow-up-on-a-black-circle-background": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrow-up-on-a-black-circle-background.svg",
+      "codepoint": 61716
+    },
+    "arrowhead-pointing-to-the-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrowhead-pointing-to-the-right.svg",
+      "codepoint": 61717
+    },
+    "arrowhead-pointing-up-inside-a-square-box-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrowhead-pointing-up-inside-a-square-box-outline.svg",
+      "codepoint": 61718
+    },
+    "arrowheads-pointing-to-the-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/arrowheads-pointing-to-the-left.svg",
+      "codepoint": 61719
+    },
+    "asterisk": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/asterisk.svg",
+      "codepoint": 61720
+    },
+    "ban-circle-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/ban-circle-symbol.svg",
+      "codepoint": 61721
+    },
+    "bar-graph-on-a-rectangle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bar-graph-on-a-rectangle.svg",
+      "codepoint": 61722
+    },
+    "barcode": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/barcode.svg",
+      "codepoint": 61723
+    },
+    "beaker": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/beaker.svg",
+      "codepoint": 61724
+    },
+    "beer-jar-black-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/beer-jar-black-silhouette.svg",
+      "codepoint": 61725
+    },
+    "bell-musical-tool": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bell-musical-tool.svg",
+      "codepoint": 61726
+    },
+    "bitbucket-logotype-camera-lens-in-perspective": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bitbucket-logotype-camera-lens-in-perspective.svg",
+      "codepoint": 61727
+    },
+    "bitbucket-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bitbucket-sign.svg",
+      "codepoint": 61728
+    },
+    "bitcoin-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bitcoin-logo.svg",
+      "codepoint": 61729
+    },
+    "blank-file": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/blank-file.svg",
+      "codepoint": 61730
+    },
+    "bold-text-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bold-text-option.svg",
+      "codepoint": 61731
+    },
+    "book": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/book.svg",
+      "codepoint": 61732
+    },
+    "bookmark-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bookmark-black-shape.svg",
+      "codepoint": 61733
+    },
+    "bookmark-white": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bookmark-white.svg",
+      "codepoint": 61734
+    },
+    "branch-with-leaves-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/branch-with-leaves-black-shape.svg",
+      "codepoint": 61735
+    },
+    "briefcase": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/briefcase.svg",
+      "codepoint": 61736
+    },
+    "bug": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bug.svg",
+      "codepoint": 61737
+    },
+    "building-front": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/building-front.svg",
+      "codepoint": 61738
+    },
+    "bull-horn-announcer": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bull-horn-announcer.svg",
+      "codepoint": 61739
+    },
+    "bullseye": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/bullseye.svg",
+      "codepoint": 61740
+    },
+    "calendar-page-empty": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/calendar-page-empty.svg",
+      "codepoint": 61741
+    },
+    "calendar-with-spring-binder-and-date-blocks": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/calendar-with-spring-binder-and-date-blocks.svg",
+      "codepoint": 61742
+    },
+    "camera-retro": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/camera-retro.svg",
+      "codepoint": 61743
+    },
+    "caret-arrow-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/caret-arrow-up.svg",
+      "codepoint": 61744
+    },
+    "caret-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/caret-down.svg",
+      "codepoint": 61745
+    },
+    "center-text-alignment": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/center-text-alignment.svg",
+      "codepoint": 61746
+    },
+    "certificate-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/certificate-shape.svg",
+      "codepoint": 61747
+    },
+    "check": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/check.svg",
+      "codepoint": 61748
+    },
+    "check-box-empty": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/check-box-empty.svg",
+      "codepoint": 61749
+    },
+    "check-mark": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/check-mark.svg",
+      "codepoint": 61750
+    },
+    "check-sign-in-a-rounded-black-square": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/check-sign-in-a-rounded-black-square.svg",
+      "codepoint": 61751
+    },
+    "checked-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/checked-symbol.svg",
+      "codepoint": 61752
+    },
+    "checkered-raised-flag": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/checkered-raised-flag.svg",
+      "codepoint": 61753
+    },
+    "chevron-arrow-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-arrow-down.svg",
+      "codepoint": 61754
+    },
+    "chevron-arrow-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-arrow-up.svg",
+      "codepoint": 61755
+    },
+    "chevron-pointing-to-the-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-pointing-to-the-left.svg",
+      "codepoint": 61756
+    },
+    "chevron-sign-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-sign-down.svg",
+      "codepoint": 61757
+    },
+    "chevron-sign-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-sign-left.svg",
+      "codepoint": 61758
+    },
+    "chevron-sign-to-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-sign-to-right.svg",
+      "codepoint": 61759
+    },
+    "chevron-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/chevron-up.svg",
+      "codepoint": 61760
+    },
+    "circle-shape-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/circle-shape-outline.svg",
+      "codepoint": 61761
+    },
+    "circle-with-an-arrow-pointing-to-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/circle-with-an-arrow-pointing-to-left.svg",
+      "codepoint": 61762
+    },
+    "circular-shape-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/circular-shape-silhouette.svg",
+      "codepoint": 61763
+    },
+    "cloud-storage-download": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cloud-storage-download.svg",
+      "codepoint": 61764
+    },
+    "cloud-storage-uploading-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cloud-storage-uploading-option.svg",
+      "codepoint": 61765
+    },
+    "cocktail-glass": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cocktail-glass.svg",
+      "codepoint": 61766
+    },
+    "code": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/code.svg",
+      "codepoint": 61767
+    },
+    "code-fork-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/code-fork-symbol.svg",
+      "codepoint": 61768
+    },
+    "coffee-cup-on-a-plate-black-silhouettes": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/coffee-cup-on-a-plate-black-silhouettes.svg",
+      "codepoint": 61769
+    },
+    "cog-wheel-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cog-wheel-silhouette.svg",
+      "codepoint": 61770
+    },
+    "collapse-window-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/collapse-window-option.svg",
+      "codepoint": 61771
+    },
+    "comment-black-oval-bubble-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/comment-black-oval-bubble-shape.svg",
+      "codepoint": 61772
+    },
+    "comment-white-oval-bubble": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/comment-white-oval-bubble.svg",
+      "codepoint": 61773
+    },
+    "comments": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/comments.svg",
+      "codepoint": 61774
+    },
+    "compass-circular-variant": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/compass-circular-variant.svg",
+      "codepoint": 61775
+    },
+    "computer-tablet": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/computer-tablet.svg",
+      "codepoint": 61776
+    },
+    "copy-document": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/copy-document.svg",
+      "codepoint": 61777
+    },
+    "correct-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/correct-symbol.svg",
+      "codepoint": 61778
+    },
+    "couple-of-arrows-changing-places": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/couple-of-arrows-changing-places.svg",
+      "codepoint": 61779
+    },
+    "credit-card": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/credit-card.svg",
+      "codepoint": 61780
+    },
+    "crop-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/crop-symbol.svg",
+      "codepoint": 61781
+    },
+    "cross-mark-on-a-black-circle-background": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cross-mark-on-a-black-circle-background.svg",
+      "codepoint": 61782
+    },
+    "css-3-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/css-3-logo.svg",
+      "codepoint": 61783
+    },
+    "cursor": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cursor.svg",
+      "codepoint": 61784
+    },
+    "cut": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/cut.svg",
+      "codepoint": 61785
+    },
+    "dashboard": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/dashboard.svg",
+      "codepoint": 61786
+    },
+    "delivery-truck-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/delivery-truck-silhouette.svg",
+      "codepoint": 61787
+    },
+    "desktop-monitor": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/desktop-monitor.svg",
+      "codepoint": 61788
+    },
+    "dollar-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/dollar-symbol.svg",
+      "codepoint": 61789
+    },
+    "dot-and-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/dot-and-circle.svg",
+      "codepoint": 61790
+    },
+    "double-angle-pointing-to-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/double-angle-pointing-to-right.svg",
+      "codepoint": 61791
+    },
+    "double-left-chevron": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/double-left-chevron.svg",
+      "codepoint": 61792
+    },
+    "double-sided-eraser": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/double-sided-eraser.svg",
+      "codepoint": 61793
+    },
+    "double-strikethrough-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/double-strikethrough-option.svg",
+      "codepoint": 61794
+    },
+    "down-arrow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/down-arrow.svg",
+      "codepoint": 61795
+    },
+    "download-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/download-symbol.svg",
+      "codepoint": 61796
+    },
+    "download-to-storage-drive": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/download-to-storage-drive.svg",
+      "codepoint": 61797
+    },
+    "dribbble-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/dribbble-logo.svg",
+      "codepoint": 61798
+    },
+    "dropbox-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/dropbox-logo.svg",
+      "codepoint": 61799
+    },
+    "earth-globe": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/earth-globe.svg",
+      "codepoint": 61800
+    },
+    "edit-interface-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/edit-interface-sign.svg",
+      "codepoint": 61801
+    },
+    "eject-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/eject-symbol.svg",
+      "codepoint": 61802
+    },
+    "envelope": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/envelope.svg",
+      "codepoint": 61803
+    },
+    "envelope-of-white-paper": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/envelope-of-white-paper.svg",
+      "codepoint": 61804
+    },
+    "euro-currency-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/euro-currency-symbol.svg",
+      "codepoint": 61805
+    },
+    "exchange-arrows": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/exchange-arrows.svg",
+      "codepoint": 61806
+    },
+    "exclamation": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/exclamation.svg",
+      "codepoint": 61807
+    },
+    "exclamation-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/exclamation-sign.svg",
+      "codepoint": 61808
+    },
+    "external-link-square-with-an-arrow-in-right-diagonal": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/external-link-square-with-an-arrow-in-right-diagonal.svg",
+      "codepoint": 61809
+    },
+    "external-link-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/external-link-symbol.svg",
+      "codepoint": 61810
+    },
+    "eye-open": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/eye-open.svg",
+      "codepoint": 61811
+    },
+    "eye-with-a-diagonal-line-interface-symbol-for-invisibility": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/eye-with-a-diagonal-line-interface-symbol-for-invisibility.svg",
+      "codepoint": 61812
+    },
+    "facebook-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/facebook-logo.svg",
+      "codepoint": 61813
+    },
+    "facebook-logo-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/facebook-logo-1.svg",
+      "codepoint": 61814
+    },
+    "facetime-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/facetime-button.svg",
+      "codepoint": 61815
+    },
+    "fast-forward-arrows": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fast-forward-arrows.svg",
+      "codepoint": 61816
+    },
+    "female-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/female-silhouette.svg",
+      "codepoint": 61817
+    },
+    "fighter-jet-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fighter-jet-silhouette.svg",
+      "codepoint": 61818
+    },
+    "file": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/file.svg",
+      "codepoint": 61819
+    },
+    "film-strip-with-two-photograms": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/film-strip-with-two-photograms.svg",
+      "codepoint": 61820
+    },
+    "filter-tool-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/filter-tool-black-shape.svg",
+      "codepoint": 61821
+    },
+    "finger-of-a-hand-pointing-to-right-direction": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/finger-of-a-hand-pointing-to-right-direction.svg",
+      "codepoint": 61822
+    },
+    "fire-extinguisher": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fire-extinguisher.svg",
+      "codepoint": 61823
+    },
+    "fire-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fire-symbol.svg",
+      "codepoint": 61824
+    },
+    "flag-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/flag-black-shape.svg",
+      "codepoint": 61825
+    },
+    "flickr-website-logo-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/flickr-website-logo-silhouette.svg",
+      "codepoint": 61826
+    },
+    "fluffy-cloud-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fluffy-cloud-silhouette.svg",
+      "codepoint": 61827
+    },
+    "folder-closed-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/folder-closed-black-shape.svg",
+      "codepoint": 61828
+    },
+    "folder-white-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/folder-white-shape.svg",
+      "codepoint": 61829
+    },
+    "font-selection-editor": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/font-selection-editor.svg",
+      "codepoint": 61830
+    },
+    "font-symbol-of-letter-a": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/font-symbol-of-letter-a.svg",
+      "codepoint": 61831
+    },
+    "fork-and-knife-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fork-and-knife-silhouette.svg",
+      "codepoint": 61832
+    },
+    "forward-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/forward-button.svg",
+      "codepoint": 61833
+    },
+    "four-black-squares": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/four-black-squares.svg",
+      "codepoint": 61834
+    },
+    "foursquare-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/foursquare-button.svg",
+      "codepoint": 61835
+    },
+    "frown": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/frown.svg",
+      "codepoint": 61836
+    },
+    "fullscreen-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/fullscreen-symbol.svg",
+      "codepoint": 61837
+    },
+    "gamepad-console": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/gamepad-console.svg",
+      "codepoint": 61838
+    },
+    "gift-box": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/gift-box.svg",
+      "codepoint": 61839
+    },
+    "github-character": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/github-character.svg",
+      "codepoint": 61840
+    },
+    "github-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/github-logo.svg",
+      "codepoint": 61841
+    },
+    "github-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/github-sign.svg",
+      "codepoint": 61842
+    },
+    "gittip-website-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/gittip-website-logo.svg",
+      "codepoint": 61843
+    },
+    "google-plus-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/google-plus-symbol.svg",
+      "codepoint": 61844
+    },
+    "google-plus-symbol-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/google-plus-symbol-1.svg",
+      "codepoint": 61845
+    },
+    "great-britain-pound": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/great-britain-pound.svg",
+      "codepoint": 61846
+    },
+    "group-profile-users": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/group-profile-users.svg",
+      "codepoint": 61847
+    },
+    "half-star-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/half-star-shape.svg",
+      "codepoint": 61848
+    },
+    "hand-finger-pointing-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/hand-finger-pointing-down.svg",
+      "codepoint": 61849
+    },
+    "hand-pointing-to-left-direction": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/hand-pointing-to-left-direction.svg",
+      "codepoint": 61850
+    },
+    "hand-pointing-upward": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/hand-pointing-upward.svg",
+      "codepoint": 61851
+    },
+    "hard-drive": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/hard-drive.svg",
+      "codepoint": 61852
+    },
+    "heart-shape-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/heart-shape-outline.svg",
+      "codepoint": 61853
+    },
+    "heart-shape-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/heart-shape-silhouette.svg",
+      "codepoint": 61854
+    },
+    "home": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/home.svg",
+      "codepoint": 61855
+    },
+    "horizontal-resize-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/horizontal-resize-option.svg",
+      "codepoint": 61856
+    },
+    "hostpital-building": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/hostpital-building.svg",
+      "codepoint": 61857
+    },
+    "hotel-letter-h-sign-inside-a-black-rounded-square": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/hotel-letter-h-sign-inside-a-black-rounded-square.svg",
+      "codepoint": 61858
+    },
+    "html-5-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/html-5-logo.svg",
+      "codepoint": 61859
+    },
+    "inbox": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/inbox.svg",
+      "codepoint": 61860
+    },
+    "increase-size-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/increase-size-option.svg",
+      "codepoint": 61861
+    },
+    "indent-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/indent-right.svg",
+      "codepoint": 61862
+    },
+    "information-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/information-button.svg",
+      "codepoint": 61863
+    },
+    "information-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/information-symbol.svg",
+      "codepoint": 61864
+    },
+    "instagram-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/instagram-symbol.svg",
+      "codepoint": 61865
+    },
+    "italicize-text": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/italicize-text.svg",
+      "codepoint": 61866
+    },
+    "keyboard": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/keyboard.svg",
+      "codepoint": 61867
+    },
+    "left-arrow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/left-arrow.svg",
+      "codepoint": 61868
+    },
+    "left-arrow-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/left-arrow-1.svg",
+      "codepoint": 61869
+    },
+    "left-indentation-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/left-indentation-option.svg",
+      "codepoint": 61870
+    },
+    "legal-hammer": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/legal-hammer.svg",
+      "codepoint": 61871
+    },
+    "lemon": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/lemon.svg",
+      "codepoint": 61872
+    },
+    "leter-a-inside-a-black-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/leter-a-inside-a-black-circle.svg",
+      "codepoint": 61873
+    },
+    "letter-p-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/letter-p-symbol.svg",
+      "codepoint": 61874
+    },
+    "level-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/level-up.svg",
+      "codepoint": 61875
+    },
+    "light-bulb": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/light-bulb.svg",
+      "codepoint": 61876
+    },
+    "lightning-bolt-shadow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/lightning-bolt-shadow.svg",
+      "codepoint": 61877
+    },
+    "link-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/link-symbol.svg",
+      "codepoint": 61878
+    },
+    "linkedin-letters": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/linkedin-letters.svg",
+      "codepoint": 61879
+    },
+    "linkedin-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/linkedin-sign.svg",
+      "codepoint": 61880
+    },
+    "linux-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/linux-logo.svg",
+      "codepoint": 61881
+    },
+    "list": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/list.svg",
+      "codepoint": 61882
+    },
+    "list-on-window": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/list-on-window.svg",
+      "codepoint": 61883
+    },
+    "list-with-dots": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/list-with-dots.svg",
+      "codepoint": 61884
+    },
+    "listing-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/listing-option.svg",
+      "codepoint": 61885
+    },
+    "long-arrow-pointing-to-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/long-arrow-pointing-to-left.svg",
+      "codepoint": 61886
+    },
+    "long-arrow-pointing-to-the-right": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/long-arrow-pointing-to-the-right.svg",
+      "codepoint": 61887
+    },
+    "long-arrow-pointing-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/long-arrow-pointing-up.svg",
+      "codepoint": 61888
+    },
+    "magic-wand": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/magic-wand.svg",
+      "codepoint": 61889
+    },
+    "magnifying-glass": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/magnifying-glass.svg",
+      "codepoint": 61890
+    },
+    "man": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/man.svg",
+      "codepoint": 61891
+    },
+    "map-marker": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/map-marker.svg",
+      "codepoint": 61892
+    },
+    "maxcdn-website-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/maxcdn-website-logo.svg",
+      "codepoint": 61893
+    },
+    "medical-kit": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/medical-kit.svg",
+      "codepoint": 61894
+    },
+    "meh-face-emoticon": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/meh-face-emoticon.svg",
+      "codepoint": 61895
+    },
+    "microphone-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/microphone-black-shape.svg",
+      "codepoint": 61896
+    },
+    "microphone-off": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/microphone-off.svg",
+      "codepoint": 61897
+    },
+    "minus-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/minus-button.svg",
+      "codepoint": 61898
+    },
+    "minus-sign-inside-a-black-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/minus-sign-inside-a-black-circle.svg",
+      "codepoint": 61899
+    },
+    "minus-sign-inside-a-black-rounded-square-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/minus-sign-inside-a-black-rounded-square-shape.svg",
+      "codepoint": 61900
+    },
+    "minus-sign-on-a-square-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/minus-sign-on-a-square-outline.svg",
+      "codepoint": 61901
+    },
+    "minus-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/minus-symbol.svg",
+      "codepoint": 61902
+    },
+    "mobile-phone": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/mobile-phone.svg",
+      "codepoint": 61903
+    },
+    "moon-phase-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/moon-phase-outline.svg",
+      "codepoint": 61904
+    },
+    "move-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/move-option.svg",
+      "codepoint": 61905
+    },
+    "music-headphones": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/music-headphones.svg",
+      "codepoint": 61906
+    },
+    "music-note-black-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/music-note-black-symbol.svg",
+      "codepoint": 61907
+    },
+    "musical-bell-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/musical-bell-outline.svg",
+      "codepoint": 61908
+    },
+    "nine-black-tiles": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/nine-black-tiles.svg",
+      "codepoint": 61909
+    },
+    "numbered-list": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/numbered-list.svg",
+      "codepoint": 61910
+    },
+    "open-folder": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/open-folder.svg",
+      "codepoint": 61911
+    },
+    "open-folder-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/open-folder-outline.svg",
+      "codepoint": 61912
+    },
+    "open-laptop-computer": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/open-laptop-computer.svg",
+      "codepoint": 61913
+    },
+    "open-padlock-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/open-padlock-silhouette.svg",
+      "codepoint": 61914
+    },
+    "open-wrench-tool-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/open-wrench-tool-silhouette.svg",
+      "codepoint": 61915
+    },
+    "padlock": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/padlock.svg",
+      "codepoint": 61916
+    },
+    "padlock-unlock": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/padlock-unlock.svg",
+      "codepoint": 61917
+    },
+    "paper-bill": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/paper-bill.svg",
+      "codepoint": 61918
+    },
+    "paper-clip-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/paper-clip-outline.svg",
+      "codepoint": 61919
+    },
+    "paper-push-pin": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/paper-push-pin.svg",
+      "codepoint": 61920
+    },
+    "paste-from-clipboard": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/paste-from-clipboard.svg",
+      "codepoint": 61921
+    },
+    "pause-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/pause-symbol.svg",
+      "codepoint": 61922
+    },
+    "pencil": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/pencil.svg",
+      "codepoint": 61923
+    },
+    "photo-camera": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/photo-camera.svg",
+      "codepoint": 61924
+    },
+    "picture": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/picture.svg",
+      "codepoint": 61925
+    },
+    "pinterest-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/pinterest-logo.svg",
+      "codepoint": 61926
+    },
+    "pinterest-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/pinterest-sign.svg",
+      "codepoint": 61927
+    },
+    "plane": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/plane.svg",
+      "codepoint": 61928
+    },
+    "plant-leaf-with-white-details": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/plant-leaf-with-white-details.svg",
+      "codepoint": 61929
+    },
+    "play-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/play-button.svg",
+      "codepoint": 61930
+    },
+    "play-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/play-circle.svg",
+      "codepoint": 61931
+    },
+    "play-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/play-sign.svg",
+      "codepoint": 61932
+    },
+    "play-video-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/play-video-button.svg",
+      "codepoint": 61933
+    },
+    "plus-black-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/plus-black-symbol.svg",
+      "codepoint": 61934
+    },
+    "plus-sign-in-a-black-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/plus-sign-in-a-black-circle.svg",
+      "codepoint": 61935
+    },
+    "plus-symbol-in-a-rounded-black-square": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/plus-symbol-in-a-rounded-black-square.svg",
+      "codepoint": 61936
+    },
+    "power-button-off": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/power-button-off.svg",
+      "codepoint": 61937
+    },
+    "printing-tool": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/printing-tool.svg",
+      "codepoint": 61938
+    },
+    "puzzle-piece-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/puzzle-piece-silhouette.svg",
+      "codepoint": 61939
+    },
+    "qr-code": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/qr-code.svg",
+      "codepoint": 61940
+    },
+    "question-mark-on-a-circular-black-background": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/question-mark-on-a-circular-black-background.svg",
+      "codepoint": 61941
+    },
+    "question-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/question-sign.svg",
+      "codepoint": 61942
+    },
+    "quote-left": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/quote-left.svg",
+      "codepoint": 61943
+    },
+    "reduced-volume": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/reduced-volume.svg",
+      "codepoint": 61944
+    },
+    "refresh-arrow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/refresh-arrow.svg",
+      "codepoint": 61945
+    },
+    "refresh-page-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/refresh-page-option.svg",
+      "codepoint": 61946
+    },
+    "remove-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/remove-button.svg",
+      "codepoint": 61947
+    },
+    "remove-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/remove-symbol.svg",
+      "codepoint": 61948
+    },
+    "renren-social-network-of-china-logotype": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/renren-social-network-of-china-logotype.svg",
+      "codepoint": 61949
+    },
+    "reorder-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/reorder-option.svg",
+      "codepoint": 61950
+    },
+    "reply": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/reply.svg",
+      "codepoint": 61951
+    },
+    "reply-arrow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/reply-arrow.svg",
+      "codepoint": 61952
+    },
+    "resize-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/resize-option.svg",
+      "codepoint": 61953
+    },
+    "retweet-arrows-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/retweet-arrows-symbol.svg",
+      "codepoint": 61954
+    },
+    "rewind-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/rewind-button.svg",
+      "codepoint": 61955
+    },
+    "right-arrow-in-a-circle": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/right-arrow-in-a-circle.svg",
+      "codepoint": 61956
+    },
+    "right-chevron": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/right-chevron.svg",
+      "codepoint": 61957
+    },
+    "right-quotation-mark": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/right-quotation-mark.svg",
+      "codepoint": 61958
+    },
+    "road-perspective": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/road-perspective.svg",
+      "codepoint": 61959
+    },
+    "rounded-black-square-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/rounded-black-square-shape.svg",
+      "codepoint": 61960
+    },
+    "rss-feed-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/rss-feed-button.svg",
+      "codepoint": 61961
+    },
+    "rss-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/rss-symbol.svg",
+      "codepoint": 61962
+    },
+    "rupee-indian": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/rupee-indian.svg",
+      "codepoint": 61963
+    },
+    "save-file-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/save-file-option.svg",
+      "codepoint": 61964
+    },
+    "screenshot": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/screenshot.svg",
+      "codepoint": 61965
+    },
+    "settings": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/settings.svg",
+      "codepoint": 61966
+    },
+    "share-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/share-option.svg",
+      "codepoint": 61967
+    },
+    "share-post-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/share-post-symbol.svg",
+      "codepoint": 61968
+    },
+    "share-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/share-symbol.svg",
+      "codepoint": 61969
+    },
+    "shield": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/shield.svg",
+      "codepoint": 61970
+    },
+    "shopping-cart-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/shopping-cart-black-shape.svg",
+      "codepoint": 61971
+    },
+    "sign-in": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sign-in.svg",
+      "codepoint": 61972
+    },
+    "sign-out-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sign-out-option.svg",
+      "codepoint": 61973
+    },
+    "signal-bars": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/signal-bars.svg",
+      "codepoint": 61974
+    },
+    "sitemap": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sitemap.svg",
+      "codepoint": 61975
+    },
+    "skype-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/skype-logo.svg",
+      "codepoint": 61976
+    },
+    "small-rocket-ship-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/small-rocket-ship-silhouette.svg",
+      "codepoint": 61977
+    },
+    "smile": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/smile.svg",
+      "codepoint": 61978
+    },
+    "sort-arrows-couple-pointing-up-and-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-arrows-couple-pointing-up-and-down.svg",
+      "codepoint": 61979
+    },
+    "sort-by-alphabet": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-by-alphabet.svg",
+      "codepoint": 61980
+    },
+    "sort-by-attributes": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-by-attributes.svg",
+      "codepoint": 61981
+    },
+    "sort-by-attributes-interface-button-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-by-attributes-interface-button-option.svg",
+      "codepoint": 61982
+    },
+    "sort-by-numeric-order": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-by-numeric-order.svg",
+      "codepoint": 61983
+    },
+    "sort-by-order": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-by-order.svg",
+      "codepoint": 61984
+    },
+    "sort-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-down.svg",
+      "codepoint": 61985
+    },
+    "sort-reverse-alphabetical-order": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-reverse-alphabetical-order.svg",
+      "codepoint": 61986
+    },
+    "sort-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sort-up.svg",
+      "codepoint": 61987
+    },
+    "speech-bubbles-comment-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/speech-bubbles-comment-option.svg",
+      "codepoint": 61988
+    },
+    "spinner-of-dots": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/spinner-of-dots.svg",
+      "codepoint": 61989
+    },
+    "square-shape-shadow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/square-shape-shadow.svg",
+      "codepoint": 61990
+    },
+    "stack-exchange-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/stack-exchange-logo.svg",
+      "codepoint": 61991
+    },
+    "stack-exchange-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/stack-exchange-symbol.svg",
+      "codepoint": 61992
+    },
+    "star": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/star.svg",
+      "codepoint": 61993
+    },
+    "star-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/star-1.svg",
+      "codepoint": 61994
+    },
+    "star-half-empty": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/star-half-empty.svg",
+      "codepoint": 61995
+    },
+    "step-backward": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/step-backward.svg",
+      "codepoint": 61996
+    },
+    "step-forward": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/step-forward.svg",
+      "codepoint": 61997
+    },
+    "stethoscope": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/stethoscope.svg",
+      "codepoint": 61998
+    },
+    "strikethrough": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/strikethrough.svg",
+      "codepoint": 61999
+    },
+    "suitcase-with-white-details": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/suitcase-with-white-details.svg",
+      "codepoint": 62000
+    },
+    "sun": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/sun.svg",
+      "codepoint": 62001
+    },
+    "superscript-text-formatting": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/superscript-text-formatting.svg",
+      "codepoint": 62002
+    },
+    "table-grid": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/table-grid.svg",
+      "codepoint": 62003
+    },
+    "tag-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/tag-black-shape.svg",
+      "codepoint": 62004
+    },
+    "tags": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/tags.svg",
+      "codepoint": 62005
+    },
+    "tasks-list": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/tasks-list.svg",
+      "codepoint": 62006
+    },
+    "telephone-handle-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/telephone-handle-silhouette.svg",
+      "codepoint": 62007
+    },
+    "telephone-symbol-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/telephone-symbol-button.svg",
+      "codepoint": 62008
+    },
+    "terminal": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/terminal.svg",
+      "codepoint": 62009
+    },
+    "text-file": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/text-file.svg",
+      "codepoint": 62010
+    },
+    "text-file-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/text-file-1.svg",
+      "codepoint": 62011
+    },
+    "text-height-adjustment": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/text-height-adjustment.svg",
+      "codepoint": 62012
+    },
+    "text-width": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/text-width.svg",
+      "codepoint": 62013
+    },
+    "thin-arrowheads-pointing-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/thin-arrowheads-pointing-down.svg",
+      "codepoint": 62014
+    },
+    "three-small-square-shapes": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/three-small-square-shapes.svg",
+      "codepoint": 62015
+    },
+    "thumb-down": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/thumb-down.svg",
+      "codepoint": 62016
+    },
+    "thumbs-down-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/thumbs-down-silhouette.svg",
+      "codepoint": 62017
+    },
+    "thumbs-up": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/thumbs-up.svg",
+      "codepoint": 62018
+    },
+    "thumbs-up-hand-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/thumbs-up-hand-symbol.svg",
+      "codepoint": 62019
+    },
+    "ticket": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/ticket.svg",
+      "codepoint": 62020
+    },
+    "time": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/time.svg",
+      "codepoint": 62021
+    },
+    "tint-drop": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/tint-drop.svg",
+      "codepoint": 62022
+    },
+    "trash": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/trash.svg",
+      "codepoint": 62023
+    },
+    "trello-website-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/trello-website-logo.svg",
+      "codepoint": 62024
+    },
+    "trophy": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/trophy.svg",
+      "codepoint": 62025
+    },
+    "tumblr-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/tumblr-logo.svg",
+      "codepoint": 62026
+    },
+    "tumblr-logo-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/tumblr-logo-1.svg",
+      "codepoint": 62027
+    },
+    "turkish-lire-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/turkish-lire-symbol.svg",
+      "codepoint": 62028
+    },
+    "twitter-black-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/twitter-black-shape.svg",
+      "codepoint": 62029
+    },
+    "twitter-sign": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/twitter-sign.svg",
+      "codepoint": 62030
+    },
+    "two-columns-layout": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/two-columns-layout.svg",
+      "codepoint": 62031
+    },
+    "u-shaped-thick-magnet": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/u-shaped-thick-magnet.svg",
+      "codepoint": 62032
+    },
+    "umbrella-black-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/umbrella-black-silhouette.svg",
+      "codepoint": 62033
+    },
+    "underline-text-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/underline-text-option.svg",
+      "codepoint": 62034
+    },
+    "undo-arrow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/undo-arrow.svg",
+      "codepoint": 62035
+    },
+    "unlink-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/unlink-symbol.svg",
+      "codepoint": 62036
+    },
+    "up-arrow": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/up-arrow.svg",
+      "codepoint": 62037
+    },
+    "up-chevron-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/up-chevron-button.svg",
+      "codepoint": 62038
+    },
+    "upload": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/upload.svg",
+      "codepoint": 62039
+    },
+    "upload-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/upload-button.svg",
+      "codepoint": 62040
+    },
+    "user-md-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/user-md-symbol.svg",
+      "codepoint": 62041
+    },
+    "user-shape": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/user-shape.svg",
+      "codepoint": 62042
+    },
+    "vertical-ellipsis": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/vertical-ellipsis.svg",
+      "codepoint": 62043
+    },
+    "vertical-resizing-option": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/vertical-resizing-option.svg",
+      "codepoint": 62044
+    },
+    "video-play-square-button": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/video-play-square-button.svg",
+      "codepoint": 62045
+    },
+    "vimeo-square-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/vimeo-square-logo.svg",
+      "codepoint": 62046
+    },
+    "vintage-key-outline": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/vintage-key-outline.svg",
+      "codepoint": 62047
+    },
+    "vk-social-network-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/vk-social-network-logo.svg",
+      "codepoint": 62048
+    },
+    "volume-off": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/volume-off.svg",
+      "codepoint": 62049
+    },
+    "volume-up-interface-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/volume-up-interface-symbol.svg",
+      "codepoint": 62050
+    },
+    "warning-sign-on-a-triangular-background": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/warning-sign-on-a-triangular-background.svg",
+      "codepoint": 62051
+    },
+    "weibo-website-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/weibo-website-logo.svg",
+      "codepoint": 62052
+    },
+    "wheelchair": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/wheelchair.svg",
+      "codepoint": 62053
+    },
+    "white-flag-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/white-flag-symbol.svg",
+      "codepoint": 62054
+    },
+    "windows-logo-silhouette": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/windows-logo-silhouette.svg",
+      "codepoint": 62055
+    },
+    "x2-symbol-of-a-letter-and-a-number-subscript": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/x2-symbol-of-a-letter-and-a-number-subscript.svg",
+      "codepoint": 62056
+    },
+    "xing-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/xing-logo.svg",
+      "codepoint": 62057
+    },
+    "xing-logotype": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/xing-logotype.svg",
+      "codepoint": 62058
+    },
+    "yen-symbol": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/yen-symbol.svg",
+      "codepoint": 62059
+    },
+    "youtube-logo": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/youtube-logo.svg",
+      "codepoint": 62060
+    },
+    "youtube-logo-1": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/youtube-logo-1.svg",
+      "codepoint": 62061
+    },
+    "youtube-logo-2": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/youtube-logo-2.svg",
+      "codepoint": 62062
+    },
+    "zoom-in": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/zoom-in.svg",
+      "codepoint": 62063
+    },
+    "zoom-out": {
+      "source": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg/zoom-out.svg",
+      "codepoint": 62064
+    }
+  },
+  "options": {
+    "input": {
+      "vectors": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg",
+      "templates": "/var/www/static/flaticon/zip_packs/110912-font-awesome/svg"
+    },
+    "output": {
+      "fonts": "/var/www/static/flaticon/zip_packs/110912-font-awesome/font",
+      "css": "/var/www/static/flaticon/zip_packs/110912-font-awesome/font",
+      "preview": "/var/www/static/flaticon/zip_packs/110912-font-awesome/font"
+    },
+    "config": false,
+    "templates": [
+      "../../../../../sites/flaticon/libraries/webfont/templates/flaticon.html",
+      "../../../../../sites/flaticon/libraries/webfont/templates/_flaticon.scss",
+      "../../../../../sites/flaticon/libraries/webfont/templates/flaticon.css"
+    ],
+    "font_name": "Flaticon",
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "css_selector": ".flaticon-{{glyph}}",
+    "preprocessor_path": null,
+    "autowidth": false,
+    "no_hash": true,
+    "debug": false,
+    "force": true,
+    "quiet": true
+  },
+  "templates": [
+
+  ]
+}

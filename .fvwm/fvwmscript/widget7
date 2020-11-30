@@ -8,10 +8,10 @@ Init
  Begin
   Set $git = (GetOutput {echo GT } 1 -1)
   Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
-  Set $Icon = $homeDir {pixmaps/bubbles/111.png}
-  Set $Icon2 = $homeDir {pixmaps/bubbles/222.png}
-  Set $Icon3 = $homeDir {pixmaps/bubbles/333.png}
-  Set $Icon4 = $homeDir {pixmaps/bubbles/444.png}
+  Set $Icon = $homeDir {pixmaps/bubbles/1111.png}
+  Set $Icon2 = $homeDir {pixmaps/bubbles/2222.png}
+  Set $Icon3 = $homeDir {pixmaps/bubbles/3333.png}
+  Set $Icon4 = $homeDir {pixmaps/bubbles/4444.png}
   Set $yt = (GetOutput {echo YT} 1 -1)
   Set $4C = (GetOutput {echo 4C} 1 -1)
   Set $redd = (GetOutput {echo RD} 1 -1)
@@ -106,9 +106,8 @@ Property
  Position 25 24
  Size 30 30
  Font "xft:Roboto Black:style=Bold:size=12"
- Type ItemDraw
- ForeColor {#ffffff}
- BackColor {#8ac9f4}
+ Type PushButton
+ Colorset 43
  Flags NoReliefString
  Title {}
 Main
@@ -124,9 +123,8 @@ Property
  Position 104 103
  Size 30 30
  Font "xft:Roboto Black:style=Bold:size=12"
- Type ItemDraw
- ForeColor {#ffffff}
- BackColor {#ff91c7}
+ Type PushButton
+ Colorset 86
  Flags NoReliefString
  Title {}
 Main
@@ -142,9 +140,8 @@ Property
  Position 25 103
  Size 30 30
  Font "xft:Roboto Black:style=Bold:size=12"
- Type ItemDraw
- ForeColor {#ffffff}
- BackColor {#009789}
+ Type PushButton
+ Colorset 85
  Flags NoReliefString
  Title {}
 Main
@@ -160,9 +157,8 @@ Property
  Position 104 24
  Size 30 30
  Font "xft:Roboto Black:style=Bold:size=12"
- Type ItemDraw
- ForeColor {#ffffff}
- BackColor {#ea5f83}
+ Type PushButton
+ Colorset 11
  Flags NoReliefString
  Title {}
 Main

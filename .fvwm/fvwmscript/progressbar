@@ -1,0 +1,103 @@
+WindowTitle {progressbar}
+WindowSize  280 70
+WindowPosition -274 -85
+Font "xft:Bebas Neue:style=Bold:size=25" 
+
+Init
+ Begin
+  Set $Time = (GetOutput {exec date "+%H"} 1 -1)
+  Set $Date1 = (GetOutput {exec date "+%M"} 1 -1)
+  Set $mpcc = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d' | rev | cut -c 2- | rev} 1 -1)
+  Set $cpuspeed = (GetOutput {exec cpuspeed} 1 -1)
+  Set $ramu = (GetOutput {exec RAMu} 1 -1)
+  Set $volevel = (GetOutput {exec volevel} 1 -1)
+  Set $bright = (GetOutput {exec xbacklight} 1 -1)
+  Set $tempp = (GetOutput {exec tempp} 1 -1)
+  Set $diskusage = (GetOutput {exec df --output=pcent /home | tr -dc '0-9' } 1 -1)
+
+End
+
+PeriodicTasks
+ Begin 
+  If (RemainderOfDiv (GetTime) 1)==0 Then
+  Begin
+  Set $Time = (GetOutput {exec date "+%H"} 1 -1)
+  Set $Date1 = (GetOutput {exec date "+%M"} 1 -1)
+  Set $mpcc = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d' | rev | cut -c 2- | rev} 1 -1)
+  Set $cpuspeed = (GetOutput {exec cpuspeed} 1 -1)
+  Set $ramu = (GetOutput {exec RAMu} 1 -1)
+  Set $volevel = (GetOutput {exec volevel} 1 -1)
+  Set $bright = (GetOutput {exec xbacklight} 1 -1)
+  Set $tempp = (GetOutput {exec tempp} 1 -1)
+  Set $diskusage = (GetOutput {exec df --output=pcent /home | tr -dc '0-9' } 1 -1)
+
+
+  ChangeValue 1 $cpuspeed
+  ChangeValue 2 $tempp
+  ChangeValue 3 $ramu
+  ChangeValue 4 $volevel
+  ChangeValue 5 $bright
+
+  End
+End
+
+Widget 1
+Property
+ Size   20 70
+ Position 70 0
+ Type   VDipstick
+ Title    {VDipstick}
+ #Value    50
+ MinValue 0
+ MaxValue 100
+ Colorset 80
+End
+
+
+Widget 2
+Property
+ Size   20 70
+ Position 100 0
+ Type   VDipstick
+ Title    {VDipstick}
+ #Value    50
+ MinValue 0
+ MaxValue 100
+ Colorset 81
+End
+
+Widget 3
+Property
+ Size   20 70
+ Position 130 0
+ Type   VDipstick
+ Title    {VDipstick}
+ #Value    50
+ MinValue 0
+ MaxValue 100
+ Colorset 82
+End
+
+Widget 4
+Property
+ Size   20 70
+ Position 160 0
+ Type   VDipstick
+ Title    {VDipstick}
+ #Value    50
+ MinValue 0
+ MaxValue 100
+ Colorset 83
+End
+
+Widget 5
+Property
+ Size   20 70
+ Position 190 0
+ Type   VDipstick
+ Title    {VDipstick}
+ Value    8
+ MinValue 0
+ MaxValue 100
+ Colorset 84
+End

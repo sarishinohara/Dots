@@ -1,0 +1,227 @@
+WindowTitle {widget5}
+WindowSize  298 418
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin
+  Set $Date1 = (GetOutput {exec date "+%d"} 1 -1)
+  Set $Date2 = (GetOutput {exec date "+%m"} 1 -1)
+  Set $Date3 = (GetOutput {exec date "+%H"} 1 -1)
+  Set $Date4 = (GetOutput {exec date "+%M"} 1 -1)
+
+  Set $Web1 = (GetOutput {echo REDDIT} 1 -1)
+  Set $Web2 = (GetOutput {echo GITHUB} 1 -1)
+  Set $Web3 = (GetOutput {echo 4CHAN} 1 -1)
+  Set $Web4 = (GetOutput {echo YOUTUBE} 1 -1)
+
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/full.png} 
+  Set $Icon2 = $homeDir {pixmaps/alarmoff.png} 
+  Set $notif = $homeDir {pixmaps/bubbles/notif2.png}
+  Set $notif2 = $homeDir {pixmaps/bubbles/lll.png}
+  Set $Host = (GetOutput {exec hostname} 1 -1)
+  Set $User = (GetOutput {exec whoami} 1 -1)
+
+
+  Set $tasksFile = $homeDir {memento_file}
+
+  Set $num = {wc -l < ~/.fvwm/memento_file} 
+
+
+  ChangeTitle 1 $line
+  ChangeTitle 3 $Date1
+  ChangeTitle 4 $Date2
+  ChangeTitle 5 $Date3
+  ChangeTitle 6 $Date4
+  ChangeTitle 7 $Web1
+  ChangeTitle 8 $Web2
+  ChangeTitle 9 $Web3
+  ChangeTitle 10 $Web4
+
+
+
+End
+
+PeriodicTasks
+## First Page
+Begin
+ If (RemainderOfDiv (GetTime) 60)==0 Then
+ Begin
+  Set $Date1 = (GetOutput {exec date "+%d"} 1 -1)
+  Set $Date2 = (GetOutput {exec date "+%m"} 1 -1)
+  Set $Date3 = (GetOutput {exec date "+%H"} 1 -1)
+  Set $Date4 = (GetOutput {exec date "+%M"} 1 -1)
+
+  ChangeTitle 1 $line
+  ChangeTitle 3 $Date1
+  ChangeTitle 4 $Date2
+  ChangeTitle 5 $Date3
+  ChangeTitle 6 $Date4
+ End
+End
+  
+  
+
+
+Widget 1
+Property
+ Position 148 50
+ Size 1 132
+ Font "xft:Bebas Neue:style=Bold:size=15"
+ Type ItemDraw
+ Colorset  3
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 1 {#8ac9f4} 
+  End
+End
+
+
+
+Widget 3
+Property
+ Position 190 60
+ Size 50 50
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 3 {#8ac9f4} 
+  End
+End
+
+Widget 4
+Property
+ Position 188 110
+ Size 50 50
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 4 {#8ac9f4} 
+  End
+End
+
+
+Widget 5
+Property
+ Position 55 60
+ Size 50 50
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 5 {#8ac9f4} 
+  End
+End
+
+Widget 6
+Property
+ Position 55 110
+ Size 50 50
+ Font "xft:Bebas Neue:style=Bold:size=40"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 6 {#8ac9f4} 
+  End
+End
+
+Widget 7
+Property
+ Position 0 200
+ Size 298 50
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ##ChangeForeColor 7 {#f76013}
+  Do {Exec xdg-open https://www.reddit.com/} 
+  End
+End
+
+Widget 8
+Property
+ Position 0 250
+ Size 298 50
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ Colorset 32
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://github.com/sarishinohara}
+  End
+End
+
+Widget 9 
+Property
+ Position 0 300
+ Size 298 50
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ ForeColor {#8ac9f4}
+ BackColor {#021b21} 
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://www.4chan.org/}
+  End
+End
+
+Widget 10
+Property
+ Position 0 350
+ Size 298 50
+ Font "xft:Bebas Neue:style=Bold:size=20"
+ Type ItemDraw
+ ForeColor {#ea5f83}
+ BackColor {#021b21}
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Exec xdg-open https://www.youtube.com/}
+  End
+End
+
+
+
+

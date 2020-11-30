@@ -7,8 +7,6 @@
 ##  ""          """"    """  """  ""    "" 
 ##                                     
  
- 
-
 #====================================
 #---- Environmental variables
 #====================================
@@ -26,7 +24,10 @@ SetEnv fvwm_runner "rofi -show drun -theme pad"
 SetEnv cache $[HOME]/.fvwm/cache/
 SetEnv scripts $[HOME]/.fvwm/scripts
 SetEnv icons $[HOME]/.fvwm/pixmaps
-SetEnv fvwmscript $[HOME]/.fvwm/fvwmscript
+SetEnv fvwmscript $[HOME]/.fvwm/fvwmscript/
+SetEnv oyasumi $[HOME]/.fvwm/pixmaps/oyasumi
+SetEnv dock $[HOME]/.fvwm/pixmaps/dock
+SetEnv muna $[HOME]/.fvwm/pixmaps/muna
 
 #====================================
 #---- General Settings
@@ -83,12 +84,11 @@ Style * EdgeMoveResistance 20
 
 # Give focus to FvwmButtons if the mouse Schedule 1000 $[w.id] WindowShade
 # hits top edge
-EdgeCommand Bottom Next (faa) Iconify
+EdgeCommand Bottom Next (dock) Iconify
 EdgeCommand Right Next (punpun) Iconify
 EdgeCommand Left Next (punpun) Iconify
 EdgeCommand Top Next (full) Iconify
-# EdgeLeaveCommand Left Next (FvwmButtons punpuno) Schedule 5000 MakeUNVisible
-
+##EdgeLeaveCommand Bottom Next (dock) Schedule 20000 MakeUNVisible
 
 # Make sure the Next command matches the window
 # Module FvwmAuto 100 "Silent AutoRaiseFunction" \
@@ -103,6 +103,8 @@ AddToFunc AutoRaiseFunction
 DestroyFunc DragMove
 AddToFunc DragMove 
 + M Move
+
+
 
 
 #====================================
@@ -139,33 +141,6 @@ AddToFunc   RestoreDesktop
 + I All (CurrentPage, State 1) ThisWindow State 1 False
 
 
-DestroyFunc autohide
-AddToFunc autohide
-+ I ThisWindow ($0) Deschedule $[w.id]
-+ I ThisWindow ($0) ThisWindow (Shaded) WindowShade off
-+ I TestRc (!Match) All ($0, !Shaded) autohide\_hide $1 $2
-
-DestroyFunc autohide_hide
-AddToFunc autohide_hide
-+ I Schedule $0 $[w.id] WindowShade $1
-+ I Schedule $0 $[w.id] Deschedule $[w.id]
-
-# Start FvwmAuto
-AddToFunc StartFunction I Module FvwmAuto FvwmAutohide -menter enter_handler
-
-# Add the windows you want to autohide
-DestroyFunc enter_handler
-AddToFunc enter_handler
-+ I autohide myButtons 0 NW
-+ I autohide punpun 0 NE
-+ I autohide punpuno 0 NW
-+ I autohide punpunyo 0 NW
-#            ^           ^   ^
-#            |           |   |___  Shade direction (optional)
-#            |           |_______  Hide delay (milliseconds)
-#            |___________________  Unique window name/resource
-#
-
 
 ##  Desktop backgrounds
 # Set with fvwm-root
@@ -192,9 +167,6 @@ AddToFunc StartFunction
 
 # FvwmAnimate handles some simple animation
 # + I Module FvwmAnimate
-
-## + I Module FvwmMFL
-
 
 # Options
 *FvwmAnimate: Effect Twist Random
@@ -226,7 +198,8 @@ AddToFunc StartFunction
 # Applications
 # Test (Init) Exec exec makes sure a new 
 # instance of an application is not launched
-# every time you restart fvwm 
+# every time you restart fvwm
+
 ## + I Test (Init) Exec exec hsetroot -solid "#d1e6db"
 + I Exec dunst
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 #For debian 
@@ -443,7 +416,7 @@ Key a A 4 Move 50-50w 50-50w
 Key Tab A M WindowList Root NoGeometry
 Key m A 1  Module FvwmConsole -terminal urxvt
 Key F2 A 1 Exec exec $[fvwm_runner]
-Key Space A 4 Menu MainMenu
+##Key Space A 4 Menu MainMenu
 Key t W S4 WinOnTop
 Key u W 4 UnDecorate
 Key t W 4 Decorate
@@ -462,7 +435,7 @@ Key f W 4 UndecMax
 # Restart/Exit
 Key r A S4 Restart
 Key e A S4 Module FvwmScript fvwmscript/logout2
-Key e A S1 Module FvwmScript fvwmscript/logout4
+Key e A S1 Module FvwmButtons lock -transient
 Key Right A 4 SnapRight
 Key Up A 4 SnapHalf
 Key Down A 4 SnapQuarter
@@ -473,9 +446,6 @@ Key Left A S1 TileLeft
 Key Right A S1 TileRight
 Key Up A S1 TileTop
 Key Down A S1 TileBottom
-
-
-
 
 # Move to the edge of the screen
 Key Left A C4 Move 0 w+0
@@ -488,26 +458,6 @@ Key Left A C1 Scroll -100 0
 Key Right A C1 Scroll +100 +0
 Key Up A C1 Scroll +0 -100
 Key Down A C1 Scroll +0 +100
-
-
-#  -1 means hidden
-SetEnv kuaky_pos        1
-
-DestroyFunc toggle_kuaky
-AddToFunc toggle_kuaky
-+ I Test (EnvMatch kuaky_pos 1) SetEnv WINDOW_X $[w.x]
-+ I Test (EnvMatch kuaky_pos 1) SetEnv WINDOW_Y $[w.y]
-+ I Test (EnvMatch kuaky_pos 1) SetEnv punpun $[w.name]
-+ I Test (EnvMatch kuaky_pos -1) All ("$[faa]") Raise
-+ I Test (EnvMatch kuaky_pos -1) All ("$[faa]") Move $[WINDOW_X]p $[WINDOW_Y]p
-+ I Test (EnvMatch kuaky_pos -1) All ("$[faa]") Focus
-# Maybe need more than 850 for users with a big resolution. You can play with this values for hiding it to another direction than up.
-+ I Test (EnvMatch kuaky_pos 1) All ("$[punpun]") Move $[CURSOR_X]p -850p
-+ I Test (EnvMatch kuaky_pos 1) Prev Focus
-+ I Piperead 'echo SetEnv kuaky_pos $((${kuaky_pos} * -1))'
-
-Key     F10      A   A   toggle_kuaky
-
 
 # Switch desktops alt
 Silent Key F1 A 4 GotoDesk 0 0
@@ -568,12 +518,14 @@ Key l A 4 Exec exec hikaro
 Key l A C4 Exec exec pkill lemonbar
 Key n A C4 Exec exec pkill n30f
 Key g A 4 Module FvwmPager 0 4
+Key Escape A 4 Module FvwmButtons lock -transient
 Key g A S4 Exec killall Module FvwmPager
 Key b A 4 Module FvwmButtons 
 Key o A 4 Module FvwmButtons punpuno
 Key o A 1 Module FvwmButtons punpun 
 Key p A 4 Module FvwmButtons album
 Key p A 1 Module FvwmButtons full
+Key d A 1 Module FvwmButtons dock
 Key o A S4 Exec killall Module FvwmButtons punpuno 
 Key o A S1 Exec killall Module FvwmButtons punpun 
 Key p A S4 Exec killall Module FvwmButtons album 
@@ -610,26 +562,54 @@ key XF86MonBrightnessUp A A Exec exec xbacklight -inc 1
 key XF86MonBrightnessDown A A Exec exec xbacklight -dec 1
 
 
+DestroyFunc Runner
+AddToFunc Runner
++ I None (full) Module FvwmButtons full 
++ I Next (full) Iconify
+
+Mouse 2 R A Runner 
+Key Space AWR 4 Runner
+
+
+DestroyFunc RunnerPunpun
+AddToFunc RunnerPunpun
++ I None (punpun) Module FvwmButtons punpun
++ I Next (punpun) Iconify
+
+Mouse 2 R A Runner 
+Key Space AWR 1 RunnerPunpun
+
+
 #====================================
 #---- Mouse
 #====================================
 
+#  R - Root window
+#  I - Iconified window
+#  F - window decoration corner
+#  S - window decoration side
+#  T - window decoration title
+#  W - active window
+#  0-9 - titlebar buttons
+#  M - Menu
+#  A - any context
+#
+#  You can combine contexts: FWST etc.
+
 Mouse 1 R A WindowList Root NoGeometry
 Mouse 3 R A Menu MainMenu
-Mouse 2 A 1 Menu MenuWindowOps Delete
+##Mouse 2 A 1 Menu MenuWindowOps
 Mouse 1 T A TitleFunction
 # Mouse 1 W M DragMove
-Mouse 1 W M Move 
-Mouse 2 R A Module FvwmButtons full
-Mouse 3 W 1 enter_handler
+Mouse 1 W 1 Move 
+Mouse 3 W 1 Resize
+Mouse 2 W 1 Iconify
+Mouse 2 A S4 Menu MenuWindowOps
 
-
- 
 #Mouse 3 A 1 Resize 
 
 
 Style * MouseFocusClickRaises
-Style * RoundedCorners
 
 
 
@@ -843,39 +823,6 @@ AddToFunc TileBottomRight
 + I ThisWindow (Maximized, !Shaded, !Iconic) Move -0 -0
 
 
-   # Application toggling function
-   # First argument is the window name, second argument is the
-   # command to start the application.
-   DestroyFunc ToggleWindow
-   AddToFunc ToggleWindow
-   + I None ($$0, CirculateHit) $$1
-   + I TestRc (Match) Break
-   + I Next (currentpage, visible, !iconic, $$0, CirculateHit) Close
-   + I TestRc (Match) Break
-   + I Next ($$0, CirculateHit) Function MakeVisible
-
-   # Helper function
-   DestroyFunc MakeVisible
-   AddToFunc MakeVisible
-   + I MoveToDesk
-   + I MoveToPage
-   + I MoveToScreen
-   + I Raise
-   + I Focus
-   + I Iconify off
-   + I WindowShade off
-
-# Helper function
-   DestroyFunc MakeUNVisible
-   AddToFunc MakeUNVisible
-   + I Raise off 
-   + I Iconify On 
-   + I WindowShade On 
-
-
-
-
-
 # FvwmIdent
 #
 # FvwmIdent is a module that can be used to get the various info about
@@ -932,7 +879,7 @@ Colorset 8 fg   #071d22, bg #ffffff, sh #ffffff, hi #ffffff
 # pager 
 colorset 9 fg #ffffff, bg #006c6c, hi, sh, Plain, NoShape
 colorset 10 fg #2a424a, bg #2a424a, hi #2a424a, sh #2a424a, Plain, NoShape
-colorset 11 fg #ffffff, bg #ea5f83, hi #ffffff, sh #ffffff, Plain, NoShape
+colorset 11 fg #ffffff, bg #ea5f83, hi #ea5f83, sh #ea5f83, Plain, NoShape
 colorset 12 fg #021b21, bg #ffffff, hi #ffffff, sh #ffffff, Plain, NoShape
 colorset 13 fg #ffffff, bg #242d35, hi #242d35, sh #242d35, Plain, NoShape
 Colorset 14 fg #f7f7f7, bg #f7f7f7, hi #f7f7f7, sh #f7f7f7, Plain, NoShape
@@ -947,17 +894,30 @@ Colorset 22 fg #021b21, bg #021b21, hi #37bf8d, sh #37bf8d, Plain, NoShape
 Colorset 23 fg #021b21, bg #021b21, hi #f8a1aa, sh #f8a1aa, Plain, NoShape
 Colorset 25 fg #3c404c, bg #3c404c, hi #3c404c, sh #3c404c, Plain, NoShape
 Colorset 26 fg #ffffff, bg #fe769c, hi #fe769c, sh #fe769c, Plain, NoShape 
-colorset 31 fg #ffffff, bg #071d22, sh #ffffff, hi #ffffff
+colorset 31 fg #ffffff, bg #071d22, sh #ffffff, hi #ffffff 
 colorset 33 fg #ffffff, bg #222832, sh #ffffff, hi #ffffff 
 Colorset 40 fg #ffffff, bg #dff3f3, hi #ffffff, sh #ffffff, Plain, NoShape 
 Colorset 41 fg #8ac9f4, bg #ffffff, hi #8ac9f4, sh #ffffff, Plain, NoShape 
 colorset 42 fg #ea5f83, bg #ea5f83, hi #ea5f83, sh #ea5f83, Plain, NoShape 
-Colorset 43 fg #ffffff, bg #8ac9f4, hi #ffffff, sh #ffffff, Plain, NoShape 
+Colorset 43 fg #ffffff, bg #8ac9f4, hi #8ac9f4, sh #8ac9f4, Plain, NoShape 
 Colorset 44 fg #ffffff, bg #022129, hi #ffffff, sh #ffffff, Plain, NoShape 
 Colorset 45 fg #ffffff, bg #022129, hi #022129, sh #022129, Plain, NoShape 
-colorset 46 fg #ea5f83, bg #ffffff, hi #ffffff, sh #ffffff, Plain, NoShape
+colorset 46 fg #ea5f83, bg #ffffff, hi #ffffff, sh #ffffff, Plain, NoShape 
 colorset 47 fg #8ac9f4, bg #021b21, hi #8ac9f4, sh #8ac9f4, Plain, NoShape
+colorset 50 fg #44b5b1, bg #021b21, hi #021b21, sh #021b21, Plain, NoShape
+colorset 51 fg #ea5f83, bg #021b21, hi #021b21, sh #021b21, Plain, NoShape
+colorset 52 fg #8ac9f4, bg #021b21, hi #021b21, sh #021b21, Plain, NoShape 
+colorset 53 fg #8a7a63, bg #021b21, hi #021b21, sh #021b21, Plain, NoShape 
+colorset 54 fg #ea5f83, bg #ffffff, hi #ffffff, sh #ffffff, Plain, NoShape 
 
+colorset 80 fg #8ac9f4, bg #011c22, hi #011c22, sh #011c22, Plain, NoShape
+colorset 81 fg #ea5f83, bg #011c22, hi #011c22, sh #011c22, Plain, NoShape
+colorset 82 fg #94a9d9, bg #011c22, hi #011c22, sh #011c22, Plain, NoShape 
+colorset 83 fg #44b5b1, bg #011c22, hi #011c22, sh #011c22, Plain, NoShape 
+colorset 84 fg #ffffff, bg #011c22, sh #011c22, hi #011c22, Plain, NoShape 
+
+colorset 85 fg #ffffff, bg #009789, sh #009789, hi #009789, Plain, NoShape 
+colorset 86 fg #ffffff, bg #ff91c7, sh #ff91c7, hi #ff91c7, Plain, NoShape 
 
 
 
@@ -980,12 +940,15 @@ Colorset 30 fg #ffffff, bg #012128, sh #012128, hi #012128
 
 
 # Transparent 
-Colorset 444 Transparent, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 0, bgTint rgb:02/1b/21 0, RootTransparent
-Colorset 555 Transparent, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 20, bgTint rgb:02/1b/21 20, RootTransparent
-Colorset 666 Transparent, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 70, bgTint rgb:02/1b/21 70, RootTransparent
-Colorset 777 Transparent
-Colorset 888 Transparent, RootTransparent
-Colorset 999 Transparent, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 90, bgTint rgb:02/1b/21 90, RootTransparent
+Colorset 111 Transparent, fg rgb:02/1b/21, bg average, hi rgb:ff/ff/ff, Tint rgb:02/1b/21 70, bgTint rgb:02/1b/21 70, RootTransparent buffer
+Colorset 222 Transparent buffer, fg rgb:ff/ff/ff, bg average, Tint rgb:02/1b/21 73, bgTint rgb:02/1b/21 73, RootTransparent buffer
+Colorset 333 Transparent, fg rgb:ff/ff/ff, bg average, Tint rgb:02/1b/21 0, bgTint rgb:02/1b/21 0, RootTransparent buffer
+Colorset 444 Transparent, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 0, bgTint rgb:02/1b/21 0, RootTransparent buffer
+Colorset 555 Transparent buffer, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 20, bgTint rgb:02/1b/21 20, RootTransparent buffer
+Colorset 666 Transparent buffer, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 73, bgTint rgb:02/1b/21 73, RootTransparent buffer
+Colorset 777 Transparent buffer
+Colorset 888 Transparent buffer, RootTransparent buffer
+Colorset 999 Transparent buffer, fg rgb:02/1b/21, bg average, Tint rgb:02/1b/21 90, bgTint rgb:02/1b/21 90, RootTransparent buffer
 
 # Enable colorsets
 MenuStyle * Menucolorset 8
@@ -1093,7 +1056,7 @@ DestroyModuleConfig FvwmPager:*
 #*FvwmPager: LabelsBelow
 #*FvwmPager: ShapeLabels
 
-# Pager 
+# mPager 
 DestroyModuleConfig mPager:*
 *mPager: Fore #ffffff
 *mPager: Back #021b21
@@ -1124,11 +1087,10 @@ DestroyModuleConfig mPager:*
 #*mPager: ShapeLabels
 
 
-AddToDecor MyDecor
-#+ TitleStyle 
-#+ ButtonStyle ...
-#+ BorderStyle ...
-#+ 
+
+Style FvwmPager !Title, !Borders, StaysOnBottom, Sticky, StaysOnTop, WindowListSkip
+
+Style mPager !Title, Borders, StaysOnBottom, Sticky, StaysOnTop, WindowListSkip
 
 
 # Transparent pager
@@ -1141,37 +1103,34 @@ Style * !Title, !Handles, !Borders, !Icon
 # Other
 Style ncmpcpp !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style tint2 !Title, !Handles, !Borders, !Icon, !WindowListSkip, StaysOnTop, Sticky
+Style Glava !Title, !Handles, !Borders, !Icon, !WindowListSkip, !StaysOnTop, Sticky
 Style polybar !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style Firefox !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style thunar !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style mousepad !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style Xed !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style feh !Title, !Handles, !Borders, !Icon, !WindowListSkip
-# Style Dunst Title, !Handles, !Borders, !Icon, !WindowListSkip
+Style pqiv !Title, !Handles, !Borders, !Icon, !WindowListSkip, StaysOnTop, Sticky
 Style mpv !Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style sakura Title, !Handles, !Borders, !Icon, !WindowListSkip
 Style RightPanel !Title, !Borders, !Handles, Sticky, \
                  WindowListSkip, NeverFocus
 Style ConfirmQuit !Title, !Borders, PositionPlacement Center, WindowListSkip, Layer 6
 Style FvwmIdent WindowListSkip
-
-Style FvwmPager !Title, !Borders, StaysOnBottom, Sticky, StaysOnTop, WindowListSkip
-
-Style mPager !Title, Borders, StaysOnBottom, Sticky, StaysOnTop, WindowListSkip
+Style con !Title, !Borders, PositionPlacement Center, WindowListSkip, StaysOnBottom, Sticky
 
 
 #fvwm buttons 
 Style FvwmButtons  !Title, !Borders, !FPEnterToFocus
 Style myButtons   !Title, !Borders, Sticky, WindowListSkip
 Style punpun   !Title, !Borders, Sticky, WindowListSkip, !FPEnterToFocus, !FPLeaveToUnfocus
-Style punpuno   !Title, !Borders, Sticky, WindowListSkip, !StaysOnTop, !StaysOnBottom, !StartIconic, !StartShaded, !FPEnterToFocus, !FPLeaveToUnfocus
 Style dock   !Title, !Borders, Sticky, WindowListSkip, ParentalRelativity
 Style ncmpcppo   !Title, !Borders, Sticky, WindowListSkip, ParentalRelativity
 Style full   !Title, !Borders, Sticky, WindowListSkip, !StaysOnTop, !StaysOnBottom, StartIconic, !StartShaded, !FPEnterToFocus, !FPLeaveToUnfocus
+Style lock   !Title, !Borders, Sticky, WindowListSkip, !StaysOnTop, !StaysOnBottom, !StartShaded, !FPEnterToFocus, !FPLeaveToUnfocus
 
 ImagePath $HOME/.fvwm/pixmaps
 
-#*FvwmButtons: Back #021b21
 *FvwmButtons: BoxSize fixed
 *FvwmButtons: Colorset 8
 *FvwmButtons: Columns 20
@@ -1180,20 +1139,14 @@ ImagePath $HOME/.fvwm/pixmaps
 *FvwmButtons: Geometry 280x413+0+355
 *FvwmButtons: Rows 22
 *FvwmButtons: Padding 0 0
-#*FvwmButtons(2x4, Icon banner.xpm, Action Close)
 *FvwmButtons(20x15+0+0, Frame 0, Icon keka.png, Action )
 *FvwmButtons: (20x1+0+18, Swallow(NoFvwmModule) info 'Module FvwmScript fvwmscript/FvwmScript-info' )
-#*FvwmButtons(2x2, Frame 0, Title(Center) "FVWM", ActiveColorset 3, Action )
-#*FvwmButtons(1x1, Icon my_restart.xpm, Action Restart)
-#*FvwmButtons(1x1, Icon my_iconify.xpm, Action iconify)
-#*FvwmButtons(1x1, Icon my_resize.xpm, Action Resize)
 
 
 ### MY BUTTONS
 
 ImagePath $HOME/.fvwm/pixmaps
 
-  # *myButtons: Back #021b21
 *myButtons: BoxSize fixed
 *myButtons: Colorset 28
 *myButtons: Columns 29
@@ -1208,10 +1161,8 @@ ImagePath $HOME/.fvwm/pixmaps
 *myButtons: (21x7+4+10, Padding 4, Swallow(Respawn, Close, kill) feh 'Exec mybutton &' )
 *myButtons: (29x1+0+18, Swallow(Close) track 'Module FvwmScript fvwmscript/FvwmScript-track'  )
 
-
 *myButtons: (3x3+13+22, Icon arrow-up-icon.png, Panel(delay 0, smooth, steps 0, position center, position Button, position 3+15) Todo   \
   "Module FvwmButtons Todo")
-
 
 ########## PANEL Todo
 DestroyModuleConfig Todo: *
@@ -1226,6 +1177,7 @@ DestroyModuleConfig Todo: *
 *Todo(4x1+9+0, Icon prev.png, ActiveIcon preva.png, Action(Mouse1) Exec mpc prev && killall feh)
 *Todo(4x1+17+0, Icon next.png, ActiveIcon nexta.png, Action(Mouse1) Exec mpc next && killall feh )
 
+
 Style "Todo" !Title, !Borders, WindowListSkip
 
 
@@ -1237,63 +1189,22 @@ ImagePath $HOME/.fvwm/pixmaps
 *punpun: BoxSize fixed
 *punpun: Colorset 28
 *punpun: Columns 280
-*punpun: Font "xft:Noto Sans CJK KR:Bold:size=10:antialias=True"
+*punpun: Font "xft:Noto Sans CJK KR:Bold:size=7:antialias=True"
 *punpun: Frame 0
-*punpun: Geometry 280x768+0+0 ##*punpun: Geometry 280x768+1086+0
+*punpun: Geometry 285x768+1081+0 ##*punpun: Geometry 280x768+1086+0
 *punpun: Rows 768
 *punpun: Padding 0 0
 
 *punpun: (280x86+0+60, Swallow(Close) DateTime 'Module FvwmScript fvwmscript/FvwmScript-DateTime', NoSize  )
 *punpun: (280x59+0+205, Swallow(Close) widget20 'Module FvwmScript fvwmscript/widget20', NoSize  )
 *punpun: (280x40+0+530, Swallow(Close) info 'Module FvwmScript fvwmscript/FvwmScript-info'  )
-*punpun: (30x80+125+630, Swallow(Kill) "FvwmPager" "FvwmPager mpager 2 0", NoSize)
 *punpun: (280x206+0+280, Swallow(Close) notification 'Module FvwmScript fvwmscript/notification' )
-
-
-
-### MY punpuno
-
-ImagePath $HOME/.fvwm/pixmaps
-
-  # *punpuno: Back #021b21
-*punpuno: BoxSize fixed
-*punpuno: Colorset 28
-*punpuno: Columns 280
-*punpuno: Font "xft:Noto Sans CJK KR:Bold:size=10:antialias=True"
-*punpuno: Frame 0
-*punpuno: Geometry 280x768+0+0
-*punpuno: Rows 768
-*punpuno: Padding 0 0
-
-*punpuno: (280x80+0+70, Swallow(Close) DateTime 'Module FvwmScript fvwmscript/FvwmScript-DateTime'  )
-*punpuno: (280x30+0+200, Swallow(Close) week 'Module FvwmScript fvwmscript/week'  )
-*punpuno: (280x40+0+265, Swallow(Close) widget20 'Module FvwmScript widget20'  )
-*punpuno: (130x130+75+355, Padding 0, Swallow(Respawn) feh 'Exec punpuno &',  )
-*punpuno:  (30x30+220+410, Icon next.png, ActiveIcon nexta.png, Action Exec mpc next && killall feh)
-*punpuno:  (30x30+30+410, Icon prev.png, ActiveIcon preva.png, Action Exec mpc prev && killall feh)
-*punpuno:  (100x20+90+550, Swallow(Close) track 'Module FvwmScript fvwmscript/FvwmScript-track'  )
-*punpuno:  (30x30+125+500, Swallow(Close) tets3 'Module FvwmScript fvwmscript/tets3')
-*punpuno:  (3x3+13+22, Icon arrow-up-icon.png, Panel(delay 0, smooth, steps 0, position center, position Button, position 6+33) punpunyo   \
-  "Module FvwmButtons punpunyo")
-
-
-########## PANEL punpunyo
-DestroyModuleConfig punpunyo: *
-*punpunyo: BoxSize fixed
-*punpunyo: Geometry 280x392
-*punpunyo: Frame 1
-*punpunyo: Colorset 27
-*punpunyo: Columns 280
-*punpunyo: Rows 392
-*punpunyo(280x162+0+0, Padding 0, Icon circularp2.png, Action )
-*punpunyo(280x20+0+245, Padding 0, Swallow(Close) info2 'Module FvwmScript fvwmscript/FvwmScript-info2'  )
-*punpunyo(30x40+81+326, Icon prev.png, ActiveIcon preva.png, Action(Mouse1) Exec mpc prev && killall feh)
-*punpunyo(30x40+121+326, Center, Icon play.png, ActiveIcon playa.png, Action(Mouse1) Exec mpc toggle && killall feh)
-*punpunyo(30x40+160+326, Icon next.png, ActiveIcon nexta.png, Action(Mouse1) Exec mpc next && killall feh)
-
-
-Style "punpunyo" !Title, !Borders, WindowListSkip, !Sticky, !ParentalRelativity
-
+*punpun: (280x70+0+620, Swallow(Close) progressbar 'Module FvwmScript fvwmscript/progressbar' )
+*punpun: (30x30+66+690, Colorset 52, ActiveTitle "CPU", Action(Mouse1) Exec notify-send "CPU $(cpuspeed)", Action(Mouse3) Refresh )
+*punpun: (30x30+96+690, Colorset 51, ActiveTitle "TMP", Action(Mouse1) Exec notify-send "TMP $(tempp)" )
+*punpun: (30x30+126+690, Colorset 27, ActiveTitle "RAM", Action(Mouse1) Exec notify-send "RAM $(RAMu)" )
+*punpun: (30x30+156+690, Colorset 50, ActiveTitle "VOL", Action(Mouse1) Exec notify-send "VOL $(volevel)", Action(Mouse4) Exec volup, Action(Mouse5) Exec voldown) )
+*punpun: (30x30+186+690, Colorset 28, ActiveTitle "BRI", Action(Mouse1) Exec notify-send "BRI $(xbacklight)", Action(Mouse4) Exec exec xbacklight -inc 1, Action(Mouse5) Exec exec xbacklight -dec 1)" )
 
 
 ### My ALBUMART
@@ -1312,51 +1223,32 @@ ImagePath $HOME/.fvwm/pixmaps
 *album: (20x15+0+0, Swallow(Respawn, Close) feh 'Exec album')
 *album: (20x1+0+18, Swallow Musica 'Module FvwmScript fvwmscript/FvwmScript-Musica' )
 
-
 ### My dock
 
 ImagePath $HOME/.fvwm/pixmaps
 
 # *dock: Back #021b21
 *dock: BoxSize fixed
-*dock: Colorset 666
-*dock: Columns 18
+*dock: Colorset 777
+*dock: Columns 411
 *dock: Font "xft:Noto Sans CJK KR:Medium:size=15:antialias=True"
 *dock: Frame 0
-*dock: Geometry 400x60+483+699
-*dock: Rows 2
+*dock: Geometry 424x60+471+691
+*dock: Rows 60
 *dock: Padding 0 0
 
-*dock(2x2+0+0, Icon 01.png, Action Exec urxvt)
-*dock(2x2+2+0, Icon 02.png, Action Resize)
-*dock(2x2+4+0, Icon 03.png, Action Resize)
-*dock(2x2+6+0, Icon 04.png, Action Exec brave)
-*dock(2x2+8+0, Icon circularp6.png, Panel(delay 0, smooth, steps 0, position center, position Button, position 3p-10p) foo   \
-  "Module FvwmButtons foo")
-*dock(2x2+10+0, Icon 05.png, Action Exec subl3)
-*dock(2x2+16+0, Icon 06.png, Action Exec xkill)
-*dock(2x2+12+0, Icon 07.png, Action Resize)
-*dock(2x2+14+0, Icon 08.png,  Panel(delay 0, smooth, steps 0, position center, position Button, position -130p-10p) faa   \
-  "Module FvwmButtons faa")
+*dock(53x60+0+0, Icon dock/folder5.png, ActiveIcon dock/folder4.png, Action(Mouse1) Exec thunar, Action(Mouse3) Next (thunar) Iconify )
+*dock(53x60+60+0, Icon dock/run5.png, ActiveIcon dock/run4.png, Action Exec rofi -show drun -theme pad)
+*dock(53x60+120+0, Icon dock/editor5.png, ActiveIcon dock/editor4.png, Action(Mouse1) Exec subl, Action(Mouse3) Next (subl) Iconify)
+*dock(53x60+180+0, Icon dock/browser5.png, ActiveIcon dock/browser4.png, Action(Mouse1) Exec brave, Action(Mouse3) Next (brave-browser) Iconify)
+*dock(53x60+240+0, Icon dock/terminal5.png, ActiveIcon dock/terminal4.png, Action(Mouse1) Exec urxvtc, Action(Mouse2) Exec pkill urxvt)
+*dock(53x60+300+0, Icon dock/pac.png, ActiveIcon dock/pac2.png, Action(Mouse1) Exec pamac-manager )
+*dock(53x60+360+0, Icon dock/dash.png, ActiveIcon dock/dash2.png, Action(Mouse1) Runner)
 
 
-########## PANEL docko
-DestroyModuleConfig foo: *
-*foo: BoxSize fixed
-#*punpunyo: Back #071d22
-#*punpunyo: Fore #ffffff
-*foo: Geometry 259x325
-*foo: Frame 0
-*foo: Colorset 27
-*foo: Columns 259
-*foo: Rows 325
-*foo(259x259+0+0, Padding 0, Swallow(Respawn,Close) feh 'Exec myfoo &'  )
-*foo(258x40+0+265, Swallow(Kill,Respawn) tracjk 'Module FvwmScript fvwmscript/FvwmScript-tracjk' )
-
-Style "foo" !Title, !Borders, WindowListSkip, !Sticky, !ParentalRelativity
 
 
-########## PANEL docko
+########## PANEL faa
 DestroyModuleConfig faa: *
 *faa: BoxSize fixed
 #*faa: Back #071d22
@@ -1368,7 +1260,9 @@ DestroyModuleConfig faa: *
 *faa: Rows 234
 *faa(357x234+0+0, Swallow(Kill,Respawn) Memento 'Module FvwmScript fvwmscript/Memento', Action(Mouse1) Next (faa) Iconify   )
 
+
 Style "faa" !Title, !Borders, WindowListSkip, Sticky, !ParentalRelativity, StartIconic
+
 
 ### My ncmpcppo
 
@@ -1406,14 +1300,37 @@ ImagePath $HOME/.fvwm/pixmaps
 *full: Rows 768
 *full: Padding 0 0
 
-*full: (298x298+534+187, Swallow(Close) widget111 'Module FvwmScript fvwmscript/widget111' )
-*full: (298x112+534+490, Swallow(Close) widget4 'Module FvwmScript fvwmscript/widget4' )
-*full: (298x112+231+187, Swallow(Close) widget2 'Module FvwmScript fvwmscript/widget2' )
-*full: (306x415+837+187, Swallow(Close) Kalende7 'Module FvwmScript fvwmscript/Kalende7' )
-*full: (160x161+371+302, Swallow(Close) widget7 'Module FvwmScript fvwmscript/widget7' )
-*full: (140x140+380+464, Swallow(Close) widget8 'Module FvwmScript fvwmscript/widget8' )
-*full: (131x298+232+303, Swallow(Close) widget19 'Module FvwmScript fvwmscript/widget19' )
-*full: (210x10+587+678, Swallow(Close) tets3 'Module FvwmScript fvwmscript/tets3' )
+*full: (298x298+534+177, Swallow(Close) widget111 'Module FvwmScript fvwmscript/widget111' )
+*full: (298x112+534+481, Swallow(Close) widget4 'Module FvwmScript fvwmscript/widget4' )
+*full: (298x112+231+178, Swallow(Close) widget2 'Module FvwmScript fvwmscript/widget2' )
+*full: (306x415+837+178, Swallow(Close) Kalende7 'Module FvwmScript fvwmscript/Kalende7' )
+*full: (160x161+371+293, Swallow(Close) widget7 'Module FvwmScript fvwmscript/widget7' )
+*full: (140x140+380+455, Swallow(Close) wind 'Module FvwmScript fvwmscript/wind' )
+*full: (131x298+232+294, Swallow(Close) widget19 'Module FvwmScript fvwmscript/widget19' )
+*full: (1366x70+0+66, Swallow(Close) tray5 'Module FvwmScript fvwmscript/tray5' )
+*full: (1366x70+0+657, Swallow(Close) tray10 'Module FvwmScript fvwmscript/tray10' )
+
+
+### My lock
+
+ImagePath $HOME/.fvwm/pixmaps
+
+# *lock: Back #021b21
+*lock: BoxSize fixed
+*lock: Colorset 666
+*lock: Columns 1366
+*lock: Font "xft:Noto Sans CJK KR:Medium:size=15:antialias=True"
+*lock: Frame 0
+*lock: Geometry 1366x768+0+0
+*lock: Rows 768
+*lock: Padding 0 0
+
+*lock: (150x150+208+309, Icon oyasumi/1.png, ActiveIcon oyasumi/11.png, Action(Mouse1) Exec i3lock, Action(Mouse3) Close)
+*lock: (150x150+1008+309, Icon oyasumi/2.png, ActiveIcon oyasumi/22.png, Action(Mouse1) Exec poweroff)
+*lock: (150x150+408+309, Icon oyasumi/3.png, ActiveIcon oyasumi/33.png, Action(Mouse1) Quit)
+*lock: (150x150+808+309, Icon oyasumi/5.png, ActiveIcon oyasumi/55.png, Action(Mouse1) Exec sudo reboot)
+*lock: (150x150+608+309, Icon oyasumi/7.png, ActiveIcon oyasumi/77.png, Action(Mouse1) Exec sudo suspend)
+
 
 
 # CursorStyle

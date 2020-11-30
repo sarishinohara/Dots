@@ -1,0 +1,359 @@
+WindowTitle {moonphase3}
+WindowSize  340 50
+WindowPosition 0 0
+Colorset 666
+Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
+
+Init
+ Begin 
+  Set $wewe = (GetOutput {exec wewe2} 1 -1)
+  Set $wiwi2 = (GetOutput {exec wiwi2} 1 -1)
+  Set $wewe3 = (GetOutput {exec wewe1} 1 -1)
+  Set $temp = (GetOutput {exec curl wttr.in/Mazouna?format="%t\n" | tr -d +°C} 1 -1)
+  Set $temp2 = (GetOutput {exec curl wttr.in/Mazouna?format="%f\n" | tr -d +°C} 1 -1)
+  Set $condition = (GetOutput {exec curl wttr.in/Mazouna?format="%C\n"} 1 -1)
+  Set $condition2 = (GetOutput {exec curl wttr.in/Mazouna?format="%c\n"} 1 -1)
+  Set $moonphase = (GetOutput {exec curl wttr.in/Mazouna?format="%m\n"} 1 -1)
+  Set $location = (GetOutput {exec curl wttr.in/Mazouna?format="%l\n"} 1 -1)
+  Set $wind = (GetOutput {exec curl wttr.in/Mazouna?format="%w\n" | tr -d ↗} 1 -1)
+  Set $humidity = (GetOutput {exec curl wttr.in/Mazouna?format="%h\n" | tr -d %} 1 -1)
+  Set $precipitation = (GetOutput {exec curl wttr.in/Mazouna?format="%p\n"} 1 -1)
+  Set $pressure = (GetOutput {exec curl wttr.in/Mazouna?format="%P\n"} 1 -1)
+  Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
+  Set $Icon = $homeDir {pixmaps/moonphase.png}
+  Set $moonphase2 = $homeDir {pixmaps/moonphase2.png}
+  Set $Icon1 = $homeDir {pixmaps/weather/UNKNOWN.png}
+  Set $Icon2 = $homeDir {pixmaps/plant2.png}
+  Set $moon1 = $homeDir {pixmaps/moonphase/moon1.png}
+  Set $moon2 = $homeDir {pixmaps/moonphase/moon2.png}
+  Set $moon3 = $homeDir {pixmaps/moonphase/moon3.png}
+  Set $moon4 = $homeDir {pixmaps/moonphase/moon4.png}
+  Set $moon5 = $homeDir {pixmaps/moonphase/moon5.png}
+  Set $moon6 = $homeDir {pixmaps/moonphase/moon6.png}
+  Set $moon7 = $homeDir {pixmaps/moonphase/moon7.png}
+  Set $moon8 = $homeDir {pixmaps/moonphase/moon8.png}
+  
+  HideWidget 1
+  ChangeIcon 2 $moonphase2
+  ChangeIcon 3 $moonphase2
+  ChangeIcon 4 $moonphase2
+  ChangeIcon 5 $moonphase2
+  ChangeIcon 6 $moonphase2
+  ChangeIcon 7 $moonphase2
+  ChangeIcon 8 $moonphase2
+  ChangeIcon 9 $moonphase2
+
+  Set $moonphasee = (GetOutput {echo 🌑} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 2 $moon1
+  End
+  Else
+  Begin
+    ChangeIcon 2 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌒} 1 -1) 
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 3 $moon2
+  End
+  Else
+  Begin
+    ChangeIcon 3 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌓} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 4 $moon3
+  End
+  Else
+  Begin
+    ChangeIcon 4 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌔} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 5 $moon4
+  End
+  Else
+  Begin
+    ChangeIcon 5 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌕} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 6 $moon5
+  End
+  Else
+  Begin
+    ChangeIcon 6 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌖} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 7 $moon6
+  End
+  Else
+  Begin
+    ChangeIcon 7 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌗} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 8 $moon7
+  End
+  Else
+  Begin
+    ChangeIcon 8 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌘} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 9 $moon8
+  End
+  Else
+  Begin
+    ChangeIcon 9 $moonphase2
+  End
+End
+
+PeriodicTasks
+Begin
+  If (RemainderOfDiv (GetTime) 600)==0 Then
+ Begin
+  Set $moonphase = (GetOutput {exec curl wttr.in/Mazouna?format="%m\n"} 1 -1)
+  Set $Icon = $homeDir {pixmaps/moonphase.png}
+  Set $moonphase2 = $homeDir {pixmaps/moonphase2.png}
+  HideWidget 1
+  Set $moonphasee = (GetOutput {echo 🌑} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 2 $moon1
+  End
+  Else
+  Begin
+    ChangeIcon 2 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌒} 1 -1) 
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 3 $moon2
+  End
+  Else
+  Begin
+    ChangeIcon 3 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌓} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 4 $moon3
+  End
+  Else
+  Begin
+    ChangeIcon 4 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌔} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 5 $moon4
+  End
+  Else
+  Begin
+    ChangeIcon 5 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌕} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 6 $moon5
+  End
+  Else
+  Begin
+    ChangeIcon 6 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌖} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 7 $moon6
+  End
+  Else
+  Begin
+    ChangeIcon 7 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌗} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 8 $moon7
+  End
+  Else
+  Begin
+    ChangeIcon 8 $moonphase2
+  End
+  Set $moonphasee = (GetOutput {echo 🌘} 1 -1)
+  If $moonphase == $moonphasee Then
+  Begin
+    ChangeIcon 9 $moon8
+  End
+  Else
+  Begin
+    ChangeIcon 9 $moonphase2
+  End
+ End
+End
+  
+
+Widget 1
+Property
+ Position 0 0
+ Size 340 50
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 666
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeForeColor 1 {#8ac9f4}
+  End
+End  
+
+Widget 2
+Property
+ Position 15 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 2 $moon1
+  End
+End
+  
+Widget 3
+Property
+ Position 55 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 3 $moon2
+  End
+End
+
+Widget 4
+Property
+ Position 95 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 4 $moon3
+  End
+End
+
+Widget 5
+Property
+ Position 135 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 5 $moon4
+  End
+End
+
+
+Widget 6
+Property
+ Position 175 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 6 $moon5
+  End
+End
+
+
+Widget 7
+Property
+ Position 215 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 7 $moon6
+  End
+End
+
+Widget 8
+Property
+ Position 255 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 8 $moon7
+  End
+End
+
+
+Widget 9
+Property
+ Position 295 10
+ Size 30 30
+ Font "xft:Bebas Neue:style=Regular:size=15"
+ Type ItemDraw
+ Colorset 222
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  ChangeIcon 9 $moon8
+  End
+End
+

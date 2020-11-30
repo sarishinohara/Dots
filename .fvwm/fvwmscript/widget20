@@ -5,10 +5,20 @@ WindowPosition 0 0
 Font "xft:Noto Sans cjk kr:style=Bold:size=14" 
 
 Init
- Begin
+ Begin 
   Set $wewe = (GetOutput {exec wewe2} 1 -1)
   Set $wiwi2 = (GetOutput {exec wiwi2} 1 -1)
   Set $wewe3 = (GetOutput {exec wewe1} 1 -1)
+  Set $temp = (GetOutput {exec curl wttr.in/Mazouna?format="%t\n" | tr -d +°C} 1 -1)
+  Set $temp2 = (GetOutput {exec curl wttr.in/Mazouna?format="%f\n" | tr -d +°C} 1 -1)
+  Set $condition = (GetOutput {exec curl wttr.in/Mazouna?format="%C\n"} 1 -1)
+  Set $condition2 = (GetOutput {exec curl wttr.in/Mazouna?format="%c\n"} 1 -1)
+  Set $moonphase = (GetOutput {exec curl wttr.in/Mazouna?format="%m\n"} 1 -1)
+  Set $location = (GetOutput {exec curl wttr.in/Mazouna?format="%l\n"} 1 -1)
+  Set $wind = (GetOutput {exec curl wttr.in/Mazouna?format="%w\n"} 1 -1)
+  Set $humidity = (GetOutput {exec curl wttr.in/Mazouna?format="%h\n" | tr -d %} 1 -1)
+  Set $precipitation = (GetOutput {exec curl wttr.in/Mazouna?format="%p\n"} 1 -1)
+  Set $pressure = (GetOutput {exec curl wttr.in/Mazouna?format="%P\n"} 1 -1)
   Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
   Set $Icon1 = $homeDir {pixmaps/weather/UNKNOWN.png}
   Set $Icon2 = $homeDir {pixmaps/plant2.png}
@@ -139,7 +149,7 @@ End
 
 PeriodicTasks
 Begin
-  If (RemainderOfDiv (GetTime) 1800)==0 Then
+  If (RemainderOfDiv (GetTime) 600)==0 Then
  Begin
   Set $wiwi2 = (GetOutput {exec wiwi2} 1 -1)
   Set $wewe = (GetOutput {exec wewe2} 1 -1)

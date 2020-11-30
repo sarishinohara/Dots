@@ -4,27 +4,47 @@ Font "xft:Noto Sans cjk kr:style=Bold:size=14"
 
 Init
  Begin
-  Set $Track = (GetOutput {exec mpctrack} 1 -1)
-  Set $Artist = (GetOutput {exec mpcartist} 1 -1)
-
-
-  ChangeTitle 1 $Track
-  ChangeTitle 2 $Artist
+  Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d' | rev | cut -c 2- | rev} 1 -1)
 
 End
 
 PeriodicTasks
- Begin 
-  If (RemainderOfDiv (GetTime) 5)==0 Then
+ Begin
+  If (GetOutput {mpc | grep -o playing} 1 -1) == {playing} Then
   Begin
-  Set $Track = (GetOutput {exec mpctrack} 1 -1)
-  Set $Artist = (GetOutput {exec mpcartist} 1 -1)
-
-   ChangeTitle 1 $Track
-   ChangeTitle 2 $Artist
-
+    ##### Check & Change Title
+    Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    If $newTitle == {} Then
+      Set $newTitle = {Title N/A}
+    If $Title <> $newTitle Then
+    Begin
+      Set $Title = $newTitle
+        ChangeTitle 1 $newartist
+        ChangeTitle 2 $newTitle
+    End
+ Else
+  Begin
+    ##### Check & Change Title
+    Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    If $newTitle == {} Then
+      Set $newTitle = {Title N/A}
+    If $Title <> $newTitle Then
+    Begin
+      Set $Title = $newTitle
+        ChangeTitle 1 $newartist
+        ChangeTitle 2 $newTitle
+    End
   End
+ End    
 End
+
 
 Widget 1
 Property

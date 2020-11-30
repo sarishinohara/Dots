@@ -13,11 +13,11 @@ Init
   Set $bla = (GetOutput {echo @ } 1 -1)
   Set $Host = $bla (GetOutput {exec hostname } 1 -1)
   Set $User = (GetOutput {exec whoami} 1 -1)
-  Set $Lock = $homeDir {pixmaps/padlock2.png}
+  Set $Lock = $homeDir {pixmaps/testi.png}
   Set $Sleep = $homeDir {pixmaps/sus2.png}
-  Set $Reboot = $homeDir {pixmaps/refresh2.png}
-  Set $PowerOff = $homeDir {pixmaps/pow2.png}
-  Set $log = $homeDir {pixmaps/log2.png}
+  Set $Reboot = $homeDir {pixmaps/testi4.png}
+  Set $PowerOff = $homeDir {pixmaps/testi2.png}
+  Set $log = $homeDir {pixmaps/testi3.png}
 
 
 

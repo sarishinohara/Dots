@@ -8,9 +8,11 @@ Init
   Set $Desk = (GetOutput {exec wc -l < ~/.fvwm/memento_file} 1 -1)
   Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
   Set $Icon = $homeDir {pixmaps/circularp2.png}
+  Set $widget4 = $homeDir {pixmaps/bubbles/widget4.png}
   Set $uptime = (GetOutput {exec uptime -p} 1 -1)
 
-  ChangeTitle 1 $uptime
+  ChangeIcon 1 $widget4
+  ChangeTitle 2 $uptime
 
 End
 
@@ -20,7 +22,8 @@ PeriodicTasks
   Begin
    Set $uptime = (GetOutput {exec uptime -p} 1 -1)
 
-  ChangeTitle 1 $uptime
+  ChangeIcon 1 $widget4
+  ChangeTitle 2 $uptime
 
   End
 End
@@ -32,13 +35,30 @@ Property
  Size 298 112
  Font "xft:Roboto:style=Italic:size=12"
  Type ItemDraw
+ Colorset 666
  Flags NoReliefString
  Title {}
 Main
  Case message of
   SingleClic :
   Begin
-  Do {Module FvwmScript logout2}              
+  Do {Module FvwmButtons lock}              
+  End
+End
+
+Widget 2
+Property
+ Position 0 28
+ Size 298 56
+ Font "xft:Roboto:style=Italic:size=12"
+ Type ItemDraw
+ Flags NoReliefString
+ Title {}
+Main
+ Case message of
+  SingleClic :
+  Begin
+  Do {Module FvwmButtons lock}              
   End
 End
 
