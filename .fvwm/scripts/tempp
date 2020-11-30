@@ -1,0 +1,9 @@
+#!/bin/sh
+
+get_cpu_temperature() {
+    CEL=$'\xc2\xb0C'
+    temp=$( cat /sys/devices/virtual/thermal/thermal_zone0/temp )
+    temp=`expr $temp / 1000`
+    echo $temp
+}
+ echo "$(get_cpu_temperature)"

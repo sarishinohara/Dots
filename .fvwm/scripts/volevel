@@ -1,0 +1,3 @@
+#!/bin/sh
+
+amixer sget Master | grep '  Front Left' | awk -F'[][]' '{ print $2 }' | cut -d '%' -f1

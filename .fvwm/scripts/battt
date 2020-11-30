@@ -1,0 +1,8 @@
+#!/bin/sh
+
+get_cpu_temperature() {
+    CEL="%"
+    bat=$( cat /sys/class/power_supply/BAT1/capacity )
+    echo $bat
+}
+ echo "$(get_cpu_temperature)"
