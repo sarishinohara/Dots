@@ -6,9 +6,9 @@ Colorset  8
 
 Init
  Begin
-  Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $newartist = (GetOutput {mpc --format %albumartist% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
   Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
-  Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+  Set $newalbum = (GetOutput {mpc --format %album% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
   Set $progress = (GetOutput {exec mpc | sed 's/.*(//;s/)//;2q;d' | rev | cut -c 2- | rev} 1 -1)
 
 End
@@ -23,9 +23,9 @@ PeriodicTasks
   If (GetOutput {mpc | grep -o playing} 1 -1) == {playing} Then
   Begin
     ##### Check & Change Title
-    Set $newartist = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newartist = (GetOutput {mpc --format %albumartist% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
     Set $newTitle = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
-    Set $newalbum = (GetOutput {mpc --format %title% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
+    Set $newalbum = (GetOutput {mpc --format %album% | head -n 1 | cut -d "[" -f 1 | sed -e "s/|//g" -e "s/\`/'/g"} 1 -1)
     If $newTitle == {} Then
       Set $newTitle = {Title N/A}
     If $Title <> $newTitle Then
