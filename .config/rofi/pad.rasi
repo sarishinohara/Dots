@@ -1,0 +1,23 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ font: "roboto 10";
+ width: 20;
+ lines: 6;
+ columns: 1;
+ padding: 55;
+ bw: 0;
+ show-icons: false;
+ hide-scrollbar: true;
+ fullscreen: false;
+ combi-hide-mode-prefix: true;
+ display-run: "(";
+ dpi: -1;
+ disable-history: false;
+ line-margin: 1;
+ line-padding: 2;
+ color-window: "#071d22, #071d22, #071d22";
+ color-normal: "#071d22, #ffffff, #071d22, #071d22, #94a9d9";
+ color-active: "#071d22, #b1b4b3, #071d22, #071d22, #94a9d9";
+ color-urgent: "#071d22, #b1b4b3, #071d22, #071d22, #94a9d9";
+ }
+
