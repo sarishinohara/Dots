@@ -1,4 +1,4 @@
-WindowTitle {Kalende5}
+WindowTitle {Kalende7}
 WindowSize 306 415
 WindowPosition 200 200
 
@@ -24,6 +24,7 @@ Begin
   Set $dayNrFrColor = {#021b21}
   Set $dayCurrBgColor = {#021b21}
   Set $dayCurrFrColor = {#ea5f83}
+  Set $dayFrColor = {#ffffff}
 
   ##### Settings
   Set $homeDir = (GetOutput {echo $HOME} 1 -1) {/.fvwm/}
@@ -110,7 +111,7 @@ Begin
     If (GetOutput {date +"%d" | sed -e "s/^0//"} 1 -1) == $i Then
       ChangeForeColor $dayNrWidget $dayCurrFrColor
     Else
-      ChangeBackColor $dayNrWidget $dayNrFrColor
+      ChangeForeColor $dayNrWidget $dayFrColor
     ChangeTitle $dayNrWidget $i
   End
 
@@ -420,12 +421,12 @@ If (RemainderOfDiv (GetTime) 60)==0 Then
     Begin
       Set $dayNrWidget = (Add $dayNrWidget 1)
       ShowWidget $dayNrWidget
-      ChangeBackColor $dayNrWidget $dayNrFrColor
+      ChangeForeColor $dayNrWidget $dayFrColor
       ChangeTitle $dayNrWidget $i
       If (GetOutput {date +"%m%Y" | sed -e "s/^0//"} 1 -1) ==  $currDate Then
       Begin
         If (GetOutput {date +"%d" | sed -e "s/^0//"} 1 -1) == $i Then
-          ChangeBackColor $dayNrWidget $dayCurrBgColor
+          ChangeForeColor $dayNrWidget $dayCurrFrColor
       End
     End  
     Set $doRefresh = {false}
@@ -458,7 +459,7 @@ Property
  Position    0 0
  Font "xft:Bebas Neue:style=Regular:Size=9"
  Type ItemDraw
- Colorset 666
+ Colorset 63
  Flags NoReliefString
  Title {}
 Main
@@ -470,12 +471,12 @@ Main
   End
 End
 
-Widget		1
+Widget    1
 Property
-  Type		ItemDraw
-  Size		30 30
-  Position		38 40
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    30 30
+  Position    38 40
+  Flags   NoFocus NoReliefString
 Main
   Case message of
     SingleClic :
@@ -485,12 +486,12 @@ Main
     End
   End
 
-Widget		2
+Widget    2
 Property
-  Type		ItemDraw
-  Size		150 30
-  Position		78 40
-  Flags		NoFocus NoReliefString Center
+  Type    ItemDraw
+  Size    150 30
+  Position    78 40
+  Flags   NoFocus NoReliefString Center
 Main
   Case message of
     SingleClic :
@@ -499,12 +500,12 @@ Main
     End
 End
 
-Widget		3
+Widget    3
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		170 40
-  Flags		NoFocus NoReliefString Center
+  Type    ItemDraw
+  Size    0 0
+  Position    170 40
+  Flags   NoFocus NoReliefString Center
 Main
   Case message of
     SingleClic :
@@ -513,12 +514,12 @@ Main
     End
   End
 
-Widget		4
+Widget    4
 Property
-  Type		ItemDraw
-  Size		30 30
-  Position		238 40
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    30 30
+  Position    238 40
+  Flags   NoFocus NoReliefString
 Main
   Case message of
     SingleClic :
@@ -528,12 +529,12 @@ Main
     End
   End
 
-Widget		5
+Widget    5
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		24 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    24 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
     SingleClic :
@@ -543,482 +544,482 @@ Main
     End
   End
 
-Widget		6
+Widget    6
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		62 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    62 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
   End
 
-Widget		7
+Widget    7
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		100 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    100 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
   End
 
-Widget		8
+Widget    8
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		138 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    138 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
   End
 
-Widget		9
+Widget    9
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		176 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    176 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
   End
 
-Widget		10
+Widget    10
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		214 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    214 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
   End
 
-Widget		11
+Widget    11
 Property
-  Type		ItemDraw
-  Size		0 0
-  Position		252 100
-  Flags		NoFocus NoReliefString
+  Type    ItemDraw
+  Size    0 0
+  Position    252 100
+  Flags   NoFocus NoReliefString
 Main
   Case message of
   End
 
-Widget		12
+Widget    12
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		58 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    58 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		13
+Widget    13
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		88 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    88 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		14
+Widget    14
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		118 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    118 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		15
+Widget    15
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		148 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    148 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		16
+Widget    16
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		178 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    178 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		17
+Widget    17
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		208 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    208 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		18
+Widget    18
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		238 145
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    238 145
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		19
+Widget    19
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		58 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    58 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		20
+Widget    20
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		88 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    88 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		21
+Widget    21
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		118 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    118 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		22
+Widget    22
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		148 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    148 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		23
+Widget    23
 Property
-  Type		ItemDraw
-  Size		10 15
-  Position		178 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    10 15
+  Position    178 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		24
+Widget    24
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		202 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    202 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		25
+Widget    25
 Property
-  Type		ItemDraw
-  Size		30 15
-  Position		222 190
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    30 15
+  Position    222 190
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		26
+Widget    26
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		53 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    53 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		27
+Widget    27
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		83 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    83 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		28
+Widget    28
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		113 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    113 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		29
+Widget    29
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		143 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    143 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		30
+Widget    30
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		173 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    173 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		31
+Widget    31
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		203 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    203 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		32
+Widget    32
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		233 235
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    233 235
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		33
+Widget    33
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		53 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    53 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		34
+Widget    34
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		83 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    83 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		35
+Widget    35
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		113 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    113 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		36
+Widget    36
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		143 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    143 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		37
+Widget    37
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		173 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    173 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		38
+Widget    38
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		203 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    203 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		39
+Widget    39
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		233 280
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    233 280
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		40
+Widget    40
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		53 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    53 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		41
+Widget    41
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		83 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    83 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		42
+Widget    42
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		113 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    113 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		43
+Widget    43
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		143 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    143 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		44
+Widget    44
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		173 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    173 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		45
+Widget    45
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		203 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    203 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		46
+Widget    46
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		233 325
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    233 325
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		47
+Widget    47
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		53 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    53 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		48
+Widget    48
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		83 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    83 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		49
+Widget    49
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		113 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    113 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		50
+Widget    50
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		143 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    143 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		51
+Widget    51
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		173 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    173 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		52
+Widget    52
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		203 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    203 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
 
-Widget		53
+Widget    53
 Property
-  Type		ItemDraw
-  Size		20 15
-  Position		233 370
-  Flags		NoFocus NoReliefString Right
+  Type    ItemDraw
+  Size    20 15
+  Position    233 370
+  Flags   NoFocus NoReliefString Right
 Main
   Case message of
   End
@@ -1036,6 +1037,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
@@ -1052,6 +1055,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
@@ -1068,6 +1073,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
@@ -1084,6 +1091,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
@@ -1100,6 +1109,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
@@ -1116,6 +1127,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
@@ -1132,6 +1145,8 @@ Main
  Case message of
   SingleClic :
   Begin
+  ShowWidget 1
+  ShowWidget 4
   End
 End
 
